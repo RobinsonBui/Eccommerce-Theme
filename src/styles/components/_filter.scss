@@ -1,0 +1,182 @@
+.filter {
+    margin-top: 50px;
+
+    &__wrapper {
+        @include table {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+    }
+
+    &__filter {}
+
+    &__aside {}
+
+    &__h2 {
+        margin-bottom: 20px;
+        color: $color-lila;
+        font-size: 18px;
+        letter-spacing: normal;
+
+        @include table {
+            font-size: 22px;
+        }
+
+        @include desktop {
+            font-size: 26px;
+        }
+    }
+
+    &__button {
+        padding: 20px 0 20px 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-color: #e4e4e4;
+
+        &:nth-child(even) {
+            background-color: rgb(240, 240, 240);
+        }
+
+        &.active {
+            background-color: $color-lila;
+            color: white;
+            font-weight: 600;
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            text-align: start;
+        }
+    }
+
+    &__content {}
+
+    &__filters {
+        margin-left: 30px;
+        display: flex;
+
+        @include table {
+            border: 1px solid $color-grey;
+        }
+
+        &--span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-right: 1px solid $color-grey;
+            padding: 16px 24px;
+            font-weight: 600;
+
+            svg {
+                height: 16px;
+            }
+
+            path {
+                fill: transparent;
+            }
+        }
+
+        &--button {
+            padding: 16px 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            cursor: pointer;
+            border-right: 1px solid $color-grey;
+
+            svg {
+                height: 18px;
+            }
+
+            path {
+                fill: transparent;
+            }
+        }
+
+        &--attribute {
+            position: relative;
+
+            &:hover {
+                .filter__filters--terms {
+                    z-index: 10;
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+        }
+
+        &--terms {
+            position: absolute;
+            left: 0;
+            z-index: -10;
+            height: 0%;
+            width: 100%;
+            padding: 8px 15px;
+            display: grid;
+            justify-content: space-between;
+            gap: 10px;
+            background-color: white;
+            opacity: 0;
+            transition: all .3s ease;
+        }
+
+        &--term {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            gap: 15px;
+            cursor: pointer;
+
+            input[type='checkbox'] {
+                appearance: auto;
+
+                &:checked {
+                    background-color: rgba(178, 249, 72, 0.525);
+                }
+            }
+        }
+
+    }
+
+    &__response {
+        position: relative;
+        min-height: 700px;
+        padding: 30px 0 30px 30px;
+
+
+        &--loader {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            margin-left: 20px;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            background-color: rgba(255, 255, 255, 0.343);
+            opacity: 1;
+            transition: all .5s ease;
+
+            &.disable {
+                opacity: 0;
+                z-index: -10;
+            }
+
+            @include table {
+                min-height: 510px;
+            }
+        }
+
+        &--ajax {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 20px;
+        }
+    }
+
+}

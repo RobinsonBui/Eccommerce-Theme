@@ -1,0 +1,72 @@
+.header {
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    background: $color-pink-extra-light;
+    z-index: 80;
+
+    &__wrapper {
+        height: 80px;
+        display: flex;
+        align-items: center;
+
+        @include desktop {}
+    }
+
+    &__top {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .custom-logo {
+
+        height: 100%;
+        max-height: 5rem;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+
+    }
+
+    &__toggle {}
+
+    &__ul {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__menu-movil {}
+
+    &__p {
+        color: #FFF;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+
+    &__navigation {
+        width: 100%;
+    }
+
+    &__menu {
+        display: none;
+        font-weight: 600;
+
+        @include desktop {
+            width: 100%;
+            padding: 16px 0;
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+
+        a:hover {}
+    }
+
+
+}

@@ -1,0 +1,59 @@
+.main-single-blog {
+    margin: 100px auto 130px;
+}
+
+.single-blog {
+    margin-bottom: 50px;
+
+    @include desktop {
+        max-width: 1048px;
+        margin: 0 auto;
+    }
+
+    &__h1 {
+        margin: 50px 0;
+        font-weight: 600;
+        color: $color-lila;
+    }
+
+    &__info {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 2px solid $color-lila;
+        border-bottom: 2px solid $color-lila;
+        color: $color-lila;
+        font-weight: 700;
+    }
+}
+
+.content-blog {
+    @include table-extra {
+        max-width: 700px;
+        margin: 0 auto;
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $color-lila;
+            text-align: center;
+        }
+    }
+
+    @include desktop {
+        max-width: 900px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.78;
+
+        @include table {
+            font-size: 18px;
+        }
+    }
+
+}

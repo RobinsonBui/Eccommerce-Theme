@@ -1,0 +1,135 @@
+.footer {
+    position: relative;
+    margin-top: 200px;
+    padding-bottom: 70px;
+    z-index: 3;
+    background-color: $color-lila;
+
+    &::after {
+        @include table {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color-lila;
+        }
+    }
+
+    &__decoration {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: -10%;
+            width: 120%;
+            height: 300px;
+            border-radius: 50%;
+            background-color: $color-lila;
+        }
+
+        &::after {
+            width: 115%;
+            left: auto;
+            bottom: -220px;
+            background-color: $color-pink-extra-light;
+
+            @include table {
+                width: 150%;
+            }
+        }
+
+        &::before {
+            bottom: -230px;
+            z-index: 2;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+        display: grid;
+
+        @include table {
+            gap: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 30px;
+        }
+    }
+
+    &__figure {
+        max-width: 200px;
+        margin: 0 auto 40px;
+
+        @include table {
+            max-width: 211px;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__cols {
+        text-align: center;
+        color: white;
+
+        @include table {
+            text-align: start;
+        }
+    }
+
+    &__h4 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+
+        @include table {
+            font-size: 32px;
+        }
+    }
+
+    &__nav {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        @include table {
+            align-items: start;
+        }
+    }
+
+    &__li {
+        a {
+            display: flex;
+            text-align: start;
+            align-items: center;
+            gap: 10px;
+        }
+
+        i {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

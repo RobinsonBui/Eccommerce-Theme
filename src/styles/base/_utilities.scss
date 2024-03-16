@@ -1,0 +1,195 @@
+.max-width {
+    @include max-width;
+}
+
+.main {
+    min-height: 45vh;
+    // margin: 100px auto 130px;
+}
+
+.p {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+
+
+    b {
+        font-weight: 700;
+    }
+}
+
+.button {
+    width: max-content;
+    display: flex;
+    padding: 22px 60px;
+    color: white;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &__lila {
+        background-color: $color-lila;
+    }
+
+    &__pink {
+        border: 1px solid $color-pink-extra-light;
+        background-color: $color-pink-extra-light;
+        color: black;
+
+        &:hover {
+            background-color: $color-pink-light;
+
+            color: $color-lila;
+        }
+    }
+}
+
+.h1 {
+    line-height: 2.75rem;
+    font-size: 2.13rem;
+    font-weight: 700;
+
+    @include table {
+        font-size: 2.5rem;
+    }
+
+    @include desktop {
+        font-size: 2.81rem;
+    }
+
+    @include desktop-medium {
+        font-size: 3.13rem;
+    }
+
+    @include desktop-extra {
+        font-size: 3.75rem;
+    }
+}
+
+.h2 {
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 7.6px;
+
+    @include table {
+        font-size: 34px;
+    }
+
+    @include desktop {
+        font-size: 38px;
+    }
+}
+
+.h3 {
+    @include table {}
+
+    @include desktop {}
+
+    @include desktop-extra {}
+}
+
+
+.content {
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-size: 18px;
+    }
+
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        line-height: 2.13rem;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: 0.83em;
+        margin-block-start: 1.67em;
+        margin-block-end: 1.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: 0.67em;
+        margin-block-start: 2.33em;
+        margin-block-end: 2.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    ol {
+        display: block;
+        list-style-type: decimal;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    li {
+        list-style: initial;
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+}

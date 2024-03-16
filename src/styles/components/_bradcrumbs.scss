@@ -1,0 +1,34 @@
+.breadcrumbs {
+    padding: 20px;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    a {
+        color: $color-grey;
+
+        &:nth-child(1) {
+            color: $color-lila;
+            font-weight: 600;
+        }
+
+        &:hover {
+            color: $color-lila;
+        }
+    }
+
+    &__third {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    svg {
+        path:nth-child(2) {
+            fill: transparent;
+        }
+    }
+}

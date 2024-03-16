@@ -1,0 +1,46 @@
+.hero-category {
+
+    &__wrapper {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.32);
+        }
+    }
+
+    &__texts {
+        position: relative;
+        z-index: 1;
+        padding: 40px 20px;
+
+        @include table {
+            width: 50%;
+            padding: 40px 0px 40px 0px;
+            background-color: white;
+            box-shadow: 15px 0px 22px 30px rgb(255, 255, 255);
+        }
+
+        a {
+            color: $color-lila;
+            font-weight: 600;
+        }
+    }
+
+    &__h1 {
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.25rem;
+    }
+
+    &__p {}
+}
