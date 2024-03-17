@@ -3,11 +3,13 @@
     <form method="post" action="">
         <span class="page-analytics__span">
             <label for="fieldHead">Código arriba del Head</label>
-            <textarea class="page-analytics__input" id="fieldHead" name="option_head"><?php echo get_option('option_head', ''); ?></textarea>
+            <textarea class="page-analytics__input" id="fieldHead"
+                name="option_head"><?php echo stripslashes(get_option('option_head', '')); ?></textarea>
         </span>
         <span class="page-analytics__span">
             <label for="fieldBody">Código después del Body</label>
-            <textarea class="page-analytics__input" id="fieldBody" name="option_body"><?php echo get_option('option_body', ''); ?></textarea>
+            <textarea class="page-analytics__input" id="fieldBody"
+                name="option_body"><?php echo stripslashes(get_option('option_body', '')); ?></textarea>
         </span>
         <input type="submit" name="submit" value="Guardar Cambios" class="button-primary">
     </form>
