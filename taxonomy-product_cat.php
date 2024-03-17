@@ -1,7 +1,6 @@
  <?php
    get_header();
    $current_category = get_queried_object();
-   var_dump($current_category);
    $thumbnail = get_term_meta($current_category->term_id, 'thumbnail_id', true);
    $description = $current_category->description;
    ?>

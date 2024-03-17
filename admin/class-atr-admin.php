@@ -3,33 +3,44 @@ class ATR_Admin
 {
     private $theme_name;
     private $version;
-
+    private $build_menupage;
     public function __construct($theme_name, $version)
     {
         $this->theme_name = $theme_name;
         $this->version = $version;
-
-        // Inicializar la administración
-        $this->init_admin();
+        $this->build_menupage = new ATR_BuildMenuPage();
     }
-    public function enqueue_scripts($hook)
+    public function enqueue_styles()
     {
+        wp_enqueue_style(
+            'admin-css',
+            ATR_DIR_URI . 'admin/css/admin-styles.css',
+            array(),
+            $this->version,
+            'all'
+        );
+    }
+
+    public function enqueue_scripts()
+    {
+
+        wp_enqueue_script(
+            'admin-js',
+            ATR_DIR_URI . 'admin/js/admin-app.js',
+            ['jquery'],
+            $this->version,
+            true
+        );
+
         wp_localize_script(
-            $this->theme_name,
+            'admin-js',
             'adminAJAX',
             [
-                'urlajax' => admin_url('admin-ajax.php'),
-                'seguridad' => wp_create_nonce('atr_seg')
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                "nonce" => wp_create_nonce('wkdata_seg')
             ]
         );
     }
-    // Inicializar la administración
-    private function init_admin()
-    {
-        // Agregar páginas de opciones de ACF
-        add_action('acf/init', array($this, 'add_acf_options_pages'));
-    }
-
     // Agregar páginas de opciones de ACF
     public function add_acf_options_pages()
     {
@@ -52,5 +63,22 @@ class ATR_Admin
                 'parent_slug'   => 'theme-general-settings',
             ));
         }
+    }
+
+    public function tag_manager_init()
+    {
+        add_options_page(
+            'Registrar Tag Manager',
+            'Tag Manager',
+            'manage_options',
+            'tag_manager',
+            array($this, 'tag_manager_render')
+        );
+    }
+
+    // Renderizar la página de opciones de Tag Manager
+    public function tag_manager_render()
+    {
+        require_once ATR_DIR_PATH . 'admin/partials/admin-display-analitycs.php';
     }
 }

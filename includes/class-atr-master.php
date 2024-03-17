@@ -79,6 +79,7 @@ class ATR_Master
         $this->charger                = new ATR_Charger();
         $this->atr_admin              = new ATR_Admin($this->get_theme_name(), $this->get_version());
         $this->atr_public             = new ATR_Public($this->get_theme_name(), $this->get_version());
+        $this->atr_buildmenupage      = new ATR_BuildMenuPage($this->get_theme_name(), $this->get_version());
         $this->atr_woocommerce        = new ATR_Woocommerce($this->get_theme_name(), $this->get_version());
         $this->atr_shortcodes         = new ATR_Shortcodes($this->get_theme_name(), $this->get_version());
         $this->atr_queries_ajax       = new ATR_QueriesAjax($this->get_theme_name(), $this->get_version());
@@ -86,7 +87,13 @@ class ATR_Master
 
     private function define_admin_hooks()
     {
+        $this->charger->add_action('admin_enqueue_scripts', $this->atr_admin, 'enqueue_styles');
+        $this->charger->add_action('admin_enqueue_scripts', $this->atr_admin, 'enqueue_scripts');
+
+        $this->charger->add_action('admin_menu', $this->atr_admin, 'add_acf_options_pages');
+        $this->charger->add_action('admin_menu', $this->atr_buildmenupage, 'tag_manager_init');
     }
+
 
 
     private function define_public_hooks()

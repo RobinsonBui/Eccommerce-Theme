@@ -1,6 +1,6 @@
-# Wikpis Start Theme (WST) :smiley:
+# Eccommerce Start Theme (WST)
 
-This is a start theme for WordPress projects built by Wikpis Marketing Digital. It uses npm or yarn like package manager through a package.json file, and Webpack like bundler of the JS and SCSS code.
+This is a start theme for WordPress projects the woocommerce. It uses npm or yarn like package manager through a package.json file, and Webpack like bundler of the JS and SCSS code.
 
 ## Installation
 

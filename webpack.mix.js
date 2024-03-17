@@ -10,9 +10,11 @@ if (!mix.inProduction()) {
 
 mix
   .sourceMaps()
-  .js("src/js/app.js", "public/js")
-  .sass("src/styles/style.scss", "css")
-  .setPublicPath("public");
+  .js("public/src/js/app.js", "public/js")
+  .js("admin/src/js/admin-app.js", "admin/js")
+  .sass("public/src/styles/style.scss", "public/css")
+  .sass("admin/src/styles/admin-styles.scss", "admin/css")
+  .setPublicPath("/");
 
 mix.browserSync({
   proxy: "http://ecoommerce.local/",

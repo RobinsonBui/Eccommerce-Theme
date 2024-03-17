@@ -1,0 +1,23 @@
+.wrap {}
+
+.page-analytics {
+    margin-top: 50px;
+
+    &__span {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__input {
+        width: 800px;
+        height: 300px;
+        padding: 20px;
+        font-style: italic;
+        color: #c9c9c9;
+    }
+}

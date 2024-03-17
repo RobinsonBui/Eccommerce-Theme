@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+    <?php echo get_option('option_head', ''); ?>
     <meta <?php bloginfo('charset'); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open();
+    <?php echo get_option('field_body', '');
+    wp_body_open();
+
     // $options_fields =  get_fields('option');
     ?>
     <div id="page">
