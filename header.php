@@ -18,8 +18,9 @@
 
 <body <?php body_class(); ?>>
     <?php
-    wp_body_open();
     echo stripslashes(get_option('option_body', ''));
+    wp_body_open();
+
     ?>
     <div id="page">
         <header id="masthead" class="site-header header">
