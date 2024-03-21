@@ -1,0 +1,149 @@
+.main-single-product {
+    width: 90%;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.single-product {
+    &__shop {
+        margin: 30px 0;
+        padding: 8px 16px;
+        width: max-content;
+        border: 1px solid black;
+    }
+
+    &__wrapper {
+        padding-top: 30px;
+
+        @include table {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @include desktop {
+            gap: 80px;
+        }
+    }
+
+    &__slide {
+        position: relative;
+    }
+
+    .swiper-single-product {}
+
+    .swiper-wrapper {}
+
+    .swiper-slide {
+        img {
+            aspect-ratio: 1 / 1;
+            max-width: 400px;
+        }
+    }
+
+    .swiper-pagination {}
+
+
+    &__data {
+        margin-top: 30px;
+
+        @include table {
+            margin-top: 0;
+        }
+    }
+
+    &__h1 {
+        font-weight: 700;
+        font-size: clamp(22px, 2.2vw, 28px);
+    }
+
+    &__description {
+        margin: 20px 0;
+        font-size: clamp(14px, 1.4vw, 16px);
+    }
+
+    .stock {
+        font-size: clamp(12px, 1.2vw, 14px);
+        color: green;
+    }
+
+    &__price {}
+
+    &__sale {}
+
+    &__quantity {}
+
+    .variations {
+        margin-top: 20px;
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-transform: capitalize;
+        }
+
+        .reset_variations {
+            margin: 10px 0;
+            padding: 0px 10px;
+            font-size: 14px;
+            width: max-content;
+            border: 1px solid black;
+        }
+
+        select {
+            padding-bottom: 5px;
+            text-transform: capitalize;
+            padding-left: 15px;
+
+            border-bottom: 1px solid rgb(181, 181, 181);
+            cursor: pointer;
+        }
+
+    }
+
+    .cart,
+    .woocommerce-variation-add-to-cart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .qty {
+        height: 2.23rem;
+        font-weight: 700;
+        background: #f3f3f3;
+        border-radius: 4px;
+
+    }
+
+
+}
+
+.more-info {
+    padding: 50px 0;
+
+    @include table {
+        padding: 70px 0;
+    }
+
+    &__h3 {
+        color: $color-lila;
+        font-size: 18px;
+        line-height: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 7.6px;
+
+        @include table {
+            font-size: 22px;
+        }
+
+        @include desktop {
+            font-size: 26px;
+        }
+    }
+
+    &__content {}
+}

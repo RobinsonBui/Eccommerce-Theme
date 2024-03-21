@@ -93,3 +93,27 @@ const swiperReplic = new Swiper('.swiper-product-replic', {
         },
     },
 });
+
+const swiperSingleProduct = new Swiper('.swiper-single-product', {
+    slidesPerView: 1,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    autoplay: {
+        delay: 3000,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+    },
+});
