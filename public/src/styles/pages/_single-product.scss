@@ -29,18 +29,23 @@
 
     &__slide {
         position: relative;
+
+        .swiper-slide {
+            background-color: rgba(128, 128, 128, 0.439);
+
+            img {
+                aspect-ratio: 1 / 1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
     }
 
     .swiper-single-product {}
 
     .swiper-wrapper {}
 
-    .swiper-slide {
-        img {
-            aspect-ratio: 1 / 1;
-            max-width: 400px;
-        }
-    }
+
 
     .swiper-pagination {}
 

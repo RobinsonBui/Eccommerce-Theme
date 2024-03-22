@@ -2,9 +2,9 @@
     @include max-width;
 }
 
-.main {
+main {
     min-height: 45vh;
-    // margin: 100px auto 130px;
+    overflow: hidden;
 }
 
 .p {
