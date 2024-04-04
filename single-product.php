@@ -22,16 +22,16 @@ get_header(); ?>
 
                                     if ($image_url) {
                             ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo esc_url($image_url); ?>" alt="" />
-                            </div>
-                            <?php
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo esc_url($image_url); ?>" alt="" />
+                                        </div>
+                                <?php
                                     }
                                 }
                             } else {  ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
-                            </div>
+                                <div class="swiper-slide">
+                                    <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
+                                </div>
                             <?php }
                             ?>
                         </div>
@@ -52,26 +52,6 @@ get_header(); ?>
                         }
                         ?>
                     </div>
-
-                    <!-- < ?php if ($product->is_type('variable')) : ?>
-                    <div class="single-product__variations">
-                        < ?php foreach ($product->get_available_variations() as $variation) : ?>
-                        <div class="single-product__variation">
-                            <label>
-                                <input type="checkbox" name="variation_id[]"
-                                    value="< ?php echo esc_attr($variation['variation_id']); ?>">
-                                < ?php
-                                        // Obtener solo los valores de los atributos
-                                        $attribute_values = array_values($variation['attributes']);
-                                        // Imprimir el primer valor del array de atributos
-                                        echo esc_html($attribute_values[0]);
-                                        ?>
-                            </label>
-                        </div>
-                        < ?php endforeach; ?>
-
-                    </div>
-                    < ?php endif; ?> -->
 
                     <div class="single-product__quantity">
                         <?php
@@ -107,3 +87,23 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php get_footer(); ?>
+
+<!-- < ?php if ($product->is_type('variable')) : ?>
+                    <div class="single-product__variations">
+                        < ?php foreach ($product->get_available_variations() as $variation) : ?>
+                        <div class="single-product__variation">
+                            <label>
+                                <input type="checkbox" name="variation_id[]"
+                                    value="< ?php echo esc_attr($variation['variation_id']); ?>">
+                                < ?php
+                                        // Obtener solo los valores de los atributos
+                                        $attribute_values = array_values($variation['attributes']);
+                                        // Imprimir el primer valor del array de atributos
+                                        echo esc_html($attribute_values[0]);
+                                        ?>
+                            </label>
+                        </div>
+                        < ?php endforeach; ?>
+
+                    </div>
+                    < ?php endif; ?> -->
