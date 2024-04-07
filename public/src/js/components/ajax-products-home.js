@@ -42,7 +42,6 @@ if (document.querySelector('#ajax-response')) {
             .then(data => {
                 if (data.success) {
                     let buttons = document.querySelectorAll('#ajax-response .buy-now-button');
-                    console.log(buttons)
                     var productDataArray = data.data;
                     loader.style.display = 'none';
                     responseSlides.innerHTML = productDataArray.join('');
