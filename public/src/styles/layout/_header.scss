@@ -68,6 +68,7 @@
         @include table {
             margin-top: 0;
             flex-direction: row;
+            justify-content: space-around;
         }
     }
 
