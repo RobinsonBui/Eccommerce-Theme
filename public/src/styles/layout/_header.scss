@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     background: $color-pink-extra-light;
-    z-index: 900;
+    z-index: 700;
 
     &__wrapper {
         height: 80px;
@@ -100,14 +100,18 @@
 
     &__menu-movil {
         position: absolute;
-        z-index: -1;
+        z-index: -999;
         top: 0;
-        left: 0;
+        left: -100%;
         height: 100vh;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.565);
         opacity: 0;
         transition: all 0.4s ease;
+
+        &.active {
+            left: 0;
+        }
 
         @include table {
             display: none;
