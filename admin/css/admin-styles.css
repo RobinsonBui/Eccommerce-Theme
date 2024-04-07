@@ -1,24 +1,3 @@
-.page-analytics {
-  margin-top: 50px;
-}
-.page-analytics__span {
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-}
-.page-analytics__span label {
-  margin-bottom: 15px;
-}
-.page-analytics__input {
-  width: 800px;
-  height: 300px;
-  padding: 20px;
-  font-style: italic;
-  font-weight: 600;
-  color: #242424;
-}
+.page-analytics{margin-top:50px}.page-analytics__span{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;flex-direction:column;margin-top:30px}.page-analytics__span label{margin-bottom:15px}.page-analytics__input{color:#242424;font-style:italic;font-weight:600;height:300px;padding:20px;width:800px}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWRtaW4vY3NzL2FkbWluLXN0eWxlcy5jc3MiLCJtYXBwaW5ncyI6IkFBRUE7RUFDSTtBQ0RKO0FER0k7RUFDSTtFQUNBO0VBQUE7RUFBQTtFQUFBO0VBQ0E7QUNEUjtBREdRO0VBQ0k7QUNEWjtBREtJO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0FDSFIsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3BhZ2VzL19hbmFsaXR5Y3Muc2NzcyIsIndlYnBhY2s6Ly8vLi9hZG1pbi1zdHlsZXMuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIud3JhcCB7fVxyXG5cclxuLnBhZ2UtYW5hbHl0aWNzIHtcclxuICAgIG1hcmdpbi10b3A6IDUwcHg7XHJcblxyXG4gICAgJl9fc3BhbiB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMzBweDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblxyXG4gICAgICAgIGxhYmVsIHtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgJl9faW5wdXQge1xyXG4gICAgICAgIHdpZHRoOiA4MDBweDtcclxuICAgICAgICBoZWlnaHQ6IDMwMHB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICAgICAgY29sb3I6ICMyNDI0MjQ7XHJcbiAgICB9XHJcbn0iLCIucGFnZS1hbmFseXRpY3Mge1xuICBtYXJnaW4tdG9wOiA1MHB4O1xufVxuLnBhZ2UtYW5hbHl0aWNzX19zcGFuIHtcbiAgbWFyZ2luLXRvcDogMzBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cbi5wYWdlLWFuYWx5dGljc19fc3BhbiBsYWJlbCB7XG4gIG1hcmdpbi1ib3R0b206IDE1cHg7XG59XG4ucGFnZS1hbmFseXRpY3NfX2lucHV0IHtcbiAgd2lkdGg6IDgwMHB4O1xuICBoZWlnaHQ6IDMwMHB4O1xuICBwYWRkaW5nOiAyMHB4O1xuICBmb250LXN0eWxlOiBpdGFsaWM7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGNvbG9yOiAjMjQyNDI0O1xufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/
+/*# sourceMappingURL=admin-styles.css.map*/

@@ -35,7 +35,7 @@
                echo '<div class="hero-category__texts">
                <h1 class="hero-category__h1">' .  $current_category->name . '</h1>
                   <p class="hero-category__p" id="previewCategory">' . esc_html($description) . '</p> 
-                  <a href="">Leer mas</a>
+                  <a href="#description">Leer mas</a>
                </div>';
             }; ?>
        </div>
@@ -45,7 +45,7 @@
 
     <?php $acf_taxonomy = get_field('descripcion', $current_category);
       if ($acf_taxonomy) {
-         echo ' <section class="content product-cat__content">
+         echo ' <section class="content product-cat__content" id="description">
                         <div class="product-cat__wrapper max-width"> ' .
             $acf_taxonomy . ' 
                         </div>

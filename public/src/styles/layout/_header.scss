@@ -1,14 +1,16 @@
 .header {
-    // position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     background: $color-pink-extra-light;
-    z-index: 80;
+    z-index: 900;
 
     &__wrapper {
         height: 80px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 30px;
 
         @include desktop {}
     }
@@ -22,7 +24,6 @@
     }
 
     .custom-logo {
-
         height: 100%;
         max-height: 5rem;
         aspect-ratio: 1 / 1;
@@ -30,28 +31,103 @@
 
     }
 
-    &__toggle {}
+    &__toggle {
+        position: relative;
+        width: 40px;
+        transition: all 0.4s ease-in-out;
+
+        &.active {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        @include table-extra {
+            display: none;
+        }
+    }
+
+
+    &__navigation {
+        width: auto;
+
+        @include table {
+            display: auto;
+        }
+    }
 
     &__ul {
         display: flex;
         gap: 16px;
     }
 
-    &__menu-movil {}
+    &__li {
+        position: relative;
+        font-weight: 600;
+        color: white;
+        transition: all .3s ease;
 
-    &__p {
-        color: #FFF;
-        text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        &:hover {
+            transform: translateY(-3px);
+
+            .sub-menu {
+                height: auto;
+                padding: 20px;
+                border-radius: 5px;
+                background: white;
+                box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            }
+        }
     }
 
-
-    &__navigation {
+    &__menu-movil {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
+        background-color: rgba(0, 0, 0, 0.565);
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        img {
+            object-fit: contain;
+        }
+
+        &--content {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            padding: 40px 20px;
+            transition: all 0.4s ease;
+        }
+
+        .header {
+            &__menu {
+                padding: 30px 0;
+                color: white;
+            }
+        }
+
+        &.active {
+            z-index: 990;
+            opacity: 1;
+
+            .header {
+                &__menu-movil--content {
+                    left: 0;
+                }
+            }
+        }
     }
+
+
+
+
 
     &__menu {
         display: none;
@@ -67,6 +143,58 @@
 
         a:hover {}
     }
+}
 
+.sub-menu {
+    position: absolute;
+    z-index: 999;
+    height: 0px;
+    width: max-content;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 80px;
+    gap: 20px;
+    transition: all .3s ease;
+    overflow: hidden;
 
+    &__li {
+        position: relative;
+
+        color: white;
+        font-weight: 600;
+        transition: all .3s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            a {
+                transform: translateY(-50%);
+            }
+
+            &::after {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        a {
+            height: 100%;
+            padding-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            transition: all .5s ease;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+    }
 }
