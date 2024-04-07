@@ -1,6 +1,6 @@
-let carts = document.querySelectorAll('.card-product__card');
-if (carts.length > 0) {
-    let buyNowButton = document.querySelectorAll('.buy-now-button');
+let cards = document.querySelectorAll('.card-product__card');
+if (cards) {
+    let buyNowButton = document.querySelectorAll('.card-product__add-cart');
     buyNowButton.forEach(button => {
         button.addEventListener('click', function (event) {
             event.preventDefault();
@@ -14,4 +14,4 @@ if (carts.length > 0) {
             }, 500);
         });
     });
-} 2
+} 

@@ -39,20 +39,22 @@
                                     'parent' => $category->term_id,
                                 ));
                         ?>
-                                <li class="header__li">
-                                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
-                                        <?php echo esc_html($category->name); ?></a>
-                                    <ul class="sub-menu">
-                                        <?php foreach ($subcategories as $subcategory) :
+                        <li class="header__li">
+                            <a href="<?php echo esc_url(get_term_link($category)); ?>">
+                                <?php echo esc_html($category->name); ?></a>
+                            <ul class="sub-menu">
+                                <?php foreach ($subcategories as $subcategory) :
                                             $thumbnail_id = get_term_meta($subcategory->term_id, 'thumbnail_id', true);
                                             $thumbnail = wp_get_attachment_image_url($thumbnail_id, 'thumbnail');
                                         ?>
-                                            <li class="sub-menu__li" style="background-image:url(' <?php echo esc_url($thumbnail); ?>')">
-                                                <a href="<?php echo esc_url(get_term_link($subcategory)); ?>"><?php echo esc_html($subcategory->name); ?></a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
+                                <li class="sub-menu__li" style="
+                                                background-image:url(' <?php echo esc_url($thumbnail); ?>')">
+                                    <a
+                                        href="<?php echo esc_url(get_term_link($subcategory)); ?>"><?php echo esc_html($subcategory->name); ?></a>
                                 </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
                         <?php
                             }
                         endforeach;

@@ -10,9 +10,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 30px;
 
-        @include desktop {}
+
+        @include table {
+            gap: 130px;
+        }
     }
 
     &__top {
@@ -48,24 +50,31 @@
         }
     }
 
-
     &__navigation {
         width: auto;
 
         @include table {
             display: auto;
+            width: 100%;
         }
     }
 
     &__ul {
+        margin-top: 30px;
         display: flex;
-        gap: 16px;
+        gap: 12px;
+        flex-direction: column;
+
+        @include table {
+            margin-top: 0;
+            flex-direction: row;
+        }
     }
 
     &__li {
         position: relative;
         font-weight: 600;
-        color: white;
+        color: black;
         transition: all .3s ease;
 
         &:hover {
@@ -79,6 +88,13 @@
                 box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
             }
         }
+
+        @include table {
+            color: white;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
     }
 
     &__menu-movil {
@@ -86,11 +102,15 @@
         z-index: -1;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.565);
         opacity: 0;
         transition: all 0.4s ease;
+
+        @include table {
+            display: none;
+        }
 
         img {
             object-fit: contain;
@@ -101,9 +121,11 @@
             top: 0;
             left: -100%;
             width: 50%;
-            height: 100%;
+            height: 100vh;
             padding: 40px 20px;
             transition: all 0.4s ease;
+            background-color: white;
+            color: black;
         }
 
         .header {
@@ -125,10 +147,6 @@
         }
     }
 
-
-
-
-
     &__menu {
         display: none;
         font-weight: 600;
@@ -146,55 +164,66 @@
 }
 
 .sub-menu {
-    position: absolute;
-    z-index: 999;
-    height: 0px;
-    width: max-content;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 80px;
-    gap: 20px;
-    transition: all .3s ease;
-    overflow: hidden;
+    padding-left: 10px;
+    font-weight: 400;
+
+    @include table {
+        position: absolute;
+        top: 25px;
+        z-index: 999;
+        height: 0px;
+        width: max-content;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 80px;
+        gap: 20px;
+        transition: all .3s ease;
+        overflow: hidden;
+    }
 
     &__li {
-        position: relative;
-
-        color: white;
-        font-weight: 600;
-        transition: all .3s ease;
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            transition: all .3s ease;
+        @media (max-width: 768px) {
+            background-image: none !important;
         }
 
-        &:hover {
-            a {
-                transform: translateY(-50%);
-            }
+        @include table {
+            position: relative;
+            color: white;
+            font-weight: 600;
+            transition: all .3s ease;
 
             &::after {
-                background-color: rgba(0, 0, 0, 0.6);
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                transition: all .3s ease;
             }
-        }
 
-        a {
-            height: 100%;
-            padding-bottom: 10px;
-            position: relative;
-            z-index: 1;
-            transition: all .5s ease;
-            display: flex;
-            align-items: end;
-            justify-content: center;
+            &:hover {
+                a {
+                    transform: translateY(-50%);
+                }
+
+                &::after {
+                    background-color: rgba(0, 0, 0, 0.6);
+                }
+            }
+
+            a {
+                height: 100%;
+                padding-bottom: 10px;
+                position: relative;
+                z-index: 1;
+                transition: all .5s ease;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+            }
         }
     }
 }

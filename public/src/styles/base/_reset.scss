@@ -22,6 +22,10 @@
 body {
     min-height: 100dvh;
     font-family: $font-primary;
+
+    &.hidden {
+        overflow: hidden;
+    }
 }
 
 #page {
