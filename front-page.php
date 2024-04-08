@@ -31,7 +31,7 @@ get_header(); ?>
                                 <h2 class="hero-front__h2"><?php echo esc_html($texts['titulo']); ?></h2>
                                 <p class="p hero-front__p"><?php echo esc_html($texts['descripcion']); ?></p>
                                 <?php if ($button_banner) : ?>
-                                <a href="<?php echo esc_url($button_banner['url_']); ?>">
+                                <a href="<?php echo $button_banner['url_'];  ?>">
                                     <button
                                         class="hero-front__button button button__pink"><?php echo esc_html($button_banner['texto_btn']); ?></button>
                                 </a>
