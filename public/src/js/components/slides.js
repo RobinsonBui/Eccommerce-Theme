@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-const swiperBanner = new Swiper('.swiper-banner', {
+const swiperBanner = new Swiper('.swiper-hero-front', {
     slidesPerView: 1,
     speed: 1000,
     effect: 'fade',

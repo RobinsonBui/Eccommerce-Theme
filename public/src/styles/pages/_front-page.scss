@@ -17,10 +17,16 @@
 
     &__texts {
         max-width: 450px;
-        margin: 0 auto;
+
         display: flex;
         flex-direction: column;
         gap: 20px;
+        position: relative;
+        z-index: 2;
+
+        @include mx-table {
+            margin: 0 auto;
+        }
 
         @include table {
             &--right {
@@ -29,7 +35,7 @@
             }
 
             &--left {
-                margin-right: 0;
+                margin-right: auto;
                 margin-left: 0;
             }
         }
@@ -88,8 +94,8 @@
     .swiper-wrapper {}
 
     .swiper-slide {
+        position: relative;
         max-height: 450px;
-        display: grid;
         display: flex;
         align-items: center;
 
@@ -97,6 +103,17 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
 
         @include table {
             aspect-ratio: 16/9;
@@ -228,12 +245,13 @@
     .swiper-slide {
         height: auto;
         transition: all .3s ease;
+        overflow: hidden;
     }
 
     &__product {
         position: relative;
         height: 100%;
-        border-radius: 15px;
+
         border: 1px solid #FBE2E9;
         background: #FBFBFB;
         box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.10);
@@ -317,6 +335,12 @@
 
 
 
+}
+
+.card-product {
+    .swiper-slide {
+        border-radius: 15px;
+    }
 }
 
 .parallax {
