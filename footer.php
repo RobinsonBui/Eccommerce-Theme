@@ -18,7 +18,8 @@ $options_fields = get_fields('option');
     <div class="footer__wrapper max-width">
         <a href="/">
             <figure class="footer__figure">
-                <img src="<?php echo $footer['footer_logo']['url']; ?>" alt="<?php echo $footer['footer_logo']['alt']; ?>">
+                <img src="<?php echo $footer['footer_logo']['url']; ?>"
+                    alt="<?php echo $footer['footer_logo']['alt']; ?>">
             </figure>
         </a>
         <div class="footer__cols">
@@ -27,8 +28,8 @@ $options_fields = get_fields('option');
                 <?php
                 wp_nav_menu(
                     array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
+                        'theme_location' => 'menu_primary',
+                        'menu_id'        => 'menu_primary',
                     )
                 );
                 ?>
@@ -40,11 +41,11 @@ $options_fields = get_fields('option');
                 <?php if ($footer['contacto']) :
                     foreach ($footer['contacto'] as $contact) :
                 ?>
-                        <li class="footer__li">
-                            <a target="blank" href="<?php echo $contact['url']; ?>">
-                                <i><?php echo $contact['icono']; ?></i><?php echo $contact['texto']; ?>
-                            </a>
-                        </li>
+                <li class="footer__li">
+                    <a target="blank" href="<?php echo $contact['url']; ?>">
+                        <i><?php echo $contact['icono']; ?></i><?php echo $contact['texto']; ?>
+                    </a>
+                </li>
                 <?php endforeach;
                 endif; ?>
             </ul>

@@ -1,3 +1,4 @@
+import { buyNowHandler } from "../helpers/buyNow";
 import { templateProduct } from "../helpers/cardProducts";
 
 const mainProductCat = document.querySelector('.main-product-cat');

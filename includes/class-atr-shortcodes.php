@@ -13,11 +13,11 @@ class ATR_Shortcodes
             $atts,
             'slide_replic_shortcode'
         ); ?>
-<section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
-    <div class="shortcode-grid__wrapper max-width">
-        <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
+        <section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
+            <div class="shortcode-grid__wrapper max-width">
+                <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
 
-        <?php
+                <?php
                 if (!empty($atts['category'])) {
                     $args = array(
                         'post_type'      => 'product',
@@ -70,6 +70,7 @@ class ATR_Shortcodes
                                 ';
                             } else {
                                 $output .= '
+                            <a href="/checkout/?add-to-cart=' . esc_attr($product_id) . '">
                                 <button class="card-product__add-cart buy-now-button" data-product-id="' . esc_attr($product_id) . '">
                                 <span class="card-product__tooltip">Comprar Ahora</span>
                                 <i>
@@ -80,7 +81,8 @@ class ATR_Shortcodes
                                         <path d="M9.5 17c.413 .462 1 1 2.5 1s2.5 -.897 2.5 -2s-1 -1.5 -2.5 -2s-2 -1.47 -2 -2c0 -1.104 1 -2 2 -2s1.5 0 2.5 1" />
                                     </svg>
                                 </i>
-                            </button>
+                                </button>
+                            </a>
                             <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
                             <button type="submit" name="add-to-cart" class="card-product__add-cart" value="' . esc_attr($product_id) . '">
                                 <span class="card-product__tooltip">Agregar al carrito</span>

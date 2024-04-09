@@ -60,6 +60,8 @@ class ATR_QueriesAjax
                             ';
                     } else {
                         $template_slide .= '
+                        <a href="/checkout/?add-to-cart=' . esc_attr($product_id) . '">
+
                         <button class="card-product__add-cart buy-now-button" data-product-id="' . esc_attr($product_id) . '">
                             <span class="card-product__tooltip">Comprar Ahora</span>
                             <i>
@@ -71,6 +73,7 @@ class ATR_QueriesAjax
                                 </svg>
                             </i>
                         </button>
+                        </a>
                     <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
                     <button type="submit" name="add-to-cart" class="card-product__add-cart" value="' . esc_attr($product_id) . '">
                         <span class="card-product__tooltip">Agregar al carrito</span>
