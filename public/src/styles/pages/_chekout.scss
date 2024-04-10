@@ -7,22 +7,30 @@
         font-size: 22px;
     }
 
+    .checkout {
+        display: grid;
+        gap: 20px;
+
+        @include table {
+            grid-template-columns: 1.4fr 1fr;
+        }
+
+        #order_review_heading {
+            display: none;
+        }
+    }
+
     .col2-set {
         margin-bottom: 40px;
 
-        @include table {
-            .col-2 {
-                width: 30%;
+        .col-2 {
+            display: none;
+        }
 
-                textarea {
-                    min-height: 100px;
-                    background-color: rgba(241, 241, 241, 0.741);
-                    padding: 10px;
-                }
-            }
+        @include table {
 
             .col-1 {
-                width: 65%;
+                width: 100%;
             }
         }
     }
