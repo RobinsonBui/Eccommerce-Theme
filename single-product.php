@@ -9,6 +9,22 @@ get_header(); ?>
             <a class="single-product__shop" href="/tienda">Ir a la tienda</a>
             <div class="single-product__wrapper ">
                 <div class="single-product__slide">
+                    <i class="single-product__zoom" id="zoom-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in-area"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M15 13v4" />
+                            <path d="M13 15h4" />
+                            <path d="M15 15m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" />
+                            <path d="M22 22l-3 -3" />
+                            <path d="M6 18h-1a2 2 0 0 1 -2 -2v-1" />
+                            <path d="M3 11v-1" />
+                            <path d="M3 6v-1a2 2 0 0 1 2 -2h1" />
+                            <path d="M10 3h1" />
+                            <path d="M15 3h1a2 2 0 0 1 2 2v1" />
+                        </svg>
+                    </i>
                     <div class="swiper-single-product">
                         <div class="swiper-wrapper">
                             <?php
@@ -22,20 +38,44 @@ get_header(); ?>
 
                                     if ($image_url) {
                             ?>
-                                        <div class="swiper-slide">
-                                            <img src="<?php echo esc_url($image_url); ?>" alt="" />
-                                        </div>
-                                <?php
+                            <div class="swiper-slide">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="" />
+                            </div>
+                            <?php
                                     }
                                 }
                             } else {  ?>
-                                <div class="swiper-slide">
-                                    <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
-                                </div>
+                            <div class="swiper-slide">
+                                <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
+                            </div>
                             <?php }
                             ?>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="single-product__controls">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lightbox" id="lightbox">
+                    <span id="close-lightbox"
+                        style="color: white; cursor: pointer; position: absolute; top: 10px; right: 10px;">✖</span>
+                    <img id="lightbox-img" src="" alt="Ampliación de imagen">
+                    <div class="lightbox__nav">
+                        <button id="prev-img"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M15 6l-6 6l6 6" />
+                            </svg></button>
+                        <button id="next-img"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 6l6 6l-6 6" />
+                            </svg></button>
                     </div>
                 </div>
                 <div class="single-product__data">

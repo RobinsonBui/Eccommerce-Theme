@@ -27,6 +27,27 @@
         }
     }
 
+    &__zoom {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        padding: 5px;
+        background-color: white;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        &:hover {
+            svg {
+                scale: 1.1;
+            }
+        }
+
+        svg {
+            fill: transparent;
+        }
+    }
+
     &__slide {
         position: relative;
 
