@@ -64,6 +64,7 @@ const swiperProducts = new Swiper('.swiper-ajax-product', {
             slidesPerView: 4,
         }
     },
+
 });
 
 const swiperReplic = new Swiper('.swiper-product-replic', {
@@ -107,13 +108,5 @@ const swiperSingleProduct = new Swiper('.swiper-single-product', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
     },
 });
