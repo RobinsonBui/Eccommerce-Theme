@@ -1,6 +1,11 @@
 <?php
 class ATR_AjaxWoocommerce
 {
-    // Ajax para obtener datos de categorías
+    function load_checkout_content()
+    {
 
+        echo do_shortcode('[woocommerce_checkout]');
+
+        die();
+    }
 }

@@ -23,6 +23,7 @@
     .swiper-slide {
         border-radius: 15px;
         overflow: hidden;
+        height: auto;
     }
 }
 
@@ -56,8 +57,11 @@
     }
 
     &__card {
-        height: 420px;
+        height: 100%;
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border-radius: 15px;
         overflow: hidden;
         border: 1px solid #FBE2E9;
@@ -179,7 +183,10 @@
     }
 
     &__info {
-        margin-top: 20px;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
         font-weight: 700;
     }
@@ -192,5 +199,56 @@
     &__price {
         font-weight: 600;
         color: $color-grey;
+    }
+
+    &__buy-free {
+        position: relative;
+        width: max-content;
+        padding: 12px 12px 12px 42px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: white;
+            transition: all .5s ease;
+        }
+
+        i {
+            width: 24px;
+            height: auto;
+            position: absolute;
+            left: 12px;
+            transition: all .5s ease;
+            background-color: $color-pink-extra-light;
+        }
+
+        svg {
+            fill: transparent;
+        }
+
+        &:hover {
+            background-color: $color-pink-extra-light;
+            color: black;
+            padding: 12px 42px 12px 12px;
+
+            &::after {
+                width: 100%;
+            }
+
+            i {
+                right: 12px;
+                left: calc(100% - 34px);
+            }
+        }
     }
 }

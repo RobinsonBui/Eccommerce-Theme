@@ -1,3 +1,5 @@
+import { openCheckout } from "../helpers/openCheckout";
+
 if (document.querySelector('#ajax-response')) {
     const tabsLi = document.querySelectorAll('.tabs-products__li'),
         responseSlides = document.querySelector('#ajax-response'),
@@ -45,6 +47,10 @@ if (document.querySelector('#ajax-response')) {
                     var productDataArray = data.data;
                     loader.style.display = 'none';
                     responseSlides.innerHTML = productDataArray.join('');
+                    const openCheckoutButtons = responseSlides.querySelectorAll('.open-checkout');
+
+                    openCheckout(openCheckoutButtons);
+
                 } else {
                     console.error('Error en la respuesta JSON:', data.error);
                 }

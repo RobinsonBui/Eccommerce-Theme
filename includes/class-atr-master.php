@@ -83,6 +83,7 @@ class ATR_Master
         $this->atr_woocommerce        = new ATR_Woocommerce($this->get_theme_name(), $this->get_version());
         $this->atr_shortcodes         = new ATR_Shortcodes($this->get_theme_name(), $this->get_version());
         $this->atr_queries_ajax       = new ATR_QueriesAjax($this->get_theme_name(), $this->get_version());
+        $this->atr_ajax_woocommerce   = new ATR_AjaxWoocommerce($this->get_theme_name(), $this->get_version());
     }
 
     private function define_admin_hooks()
@@ -112,6 +113,10 @@ class ATR_Master
         //registrar hook para ajax en el manejo de los filtros
         $this->charger->add_action('wp_ajax_get_filter_data', $this->atr_queries_ajax, 'get_filter_data');
         $this->charger->add_action('wp_ajax_nopriv_get_filter_data', $this->atr_queries_ajax, 'get_filter_data');
+
+        //registrar hook para ajax en el llamado a la pagina del checkout
+        $this->charger->add_action('wp_ajax_load_checkout_content', $this->atr_ajax_woocommerce, 'load_checkout_content');
+        $this->charger->add_action('wp_ajax_nopriv_load_checkout_content', $this->atr_ajax_woocommerce, 'load_checkout_content');
     }
 
     public function get_theme_name()
