@@ -1,4 +1,4 @@
-import { openCheckout } from "../helpers/openCheckout";
+import { handlerCheckout } from "../helpers/openCheckout";
 
 if (document.querySelector('#ajax-response')) {
     const tabsLi = document.querySelectorAll('.tabs-products__li'),
@@ -49,7 +49,7 @@ if (document.querySelector('#ajax-response')) {
                     responseSlides.innerHTML = productDataArray.join('');
                     const openCheckoutButtons = responseSlides.querySelectorAll('.open-checkout');
 
-                    openCheckout(openCheckoutButtons);
+                    handlerCheckout(openCheckoutButtons);
 
                 } else {
                     console.error('Error en la respuesta JSON:', data.error);

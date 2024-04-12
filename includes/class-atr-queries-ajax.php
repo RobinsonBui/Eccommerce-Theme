@@ -111,7 +111,7 @@ class ATR_QueriesAjax
                                         </svg>
                                     </i>
                                     Contraentrega
-                                    <div class="loader-circle">
+                                    <div class="loader-points">
                                         <div class="loader">
                                             <div class="circle">
                                                 <div class="dot"></div>
@@ -191,7 +191,7 @@ class ATR_QueriesAjax
             $product_title = get_the_title($product_id);
             $product_price = wc_price($product->get_price());
             $product_thumbnail = get_the_post_thumbnail($product_id);
-            $wc_action = wc_get_cart_url();
+            $wc_action = esc_url(wc_get_cart_url());
             $product_permalink = get_the_permalink($product_id);
             $product_info = array(
                 'product_id' => $product_id,

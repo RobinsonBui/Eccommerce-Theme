@@ -1,6 +1,5 @@
-import { buyNowHandler } from "../helpers/buyNow";
 import { templateProduct } from "../helpers/cardProducts";
-
+import { handlerCheckout, openCheckout } from "../helpers/openCheckout";
 const mainProductCat = document.querySelector('.main-product-cat');
 if (mainProductCat) {
     let urlCategory = window.location.href,
@@ -25,6 +24,8 @@ if (mainProductCat) {
             categoryLoader.classList.add('disable');
             const dataHTML = templateProduct(productsWithHTML);
             responseAjax.innerHTML = dataHTML;
+            const openCheckoutButtons = responseAjax.querySelectorAll('.open-checkout');
+            handlerCheckout(openCheckoutButtons);
         })
         .catch(error => {
             console.log('Error al cargar productos:', error);
@@ -60,6 +61,7 @@ if (mainProductCat) {
                     categoryLoader.classList.add('disable');
                     const dataHTML = templateProduct(productsWithHTML);
                     responseAjax.innerHTML = dataHTML;
+
                 })
                 .catch(error => {
                     console.log('Error al cargar productos:', error);

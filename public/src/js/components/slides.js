@@ -84,8 +84,19 @@ const swiperReplic = new Swiper('.swiper-product-replic', {
         },
         640: {
             slidesPerView: 2,
+            grid: {
+                fill: 'row',
+                rows: 3
+            },
         },
-        960: {
+        1040: {
+            slidesPerView: 3,
+            grid: {
+                fill: 'row',
+                rows: 2
+            },
+        },
+        1240: {
             slidesPerView: 4,
             grid: {
                 fill: 'row',

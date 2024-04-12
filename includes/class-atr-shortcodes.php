@@ -13,11 +13,11 @@ class ATR_Shortcodes
             $atts,
             'slide_replic_shortcode'
         ); ?>
-        <section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
-            <div class="shortcode-grid__wrapper max-width">
-                <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
+<section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
+    <div class="shortcode-grid__wrapper max-width">
+        <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
 
-                <?php
+        <?php
                 if (!empty($atts['category'])) {
                     $args = array(
                         'post_type'      => 'product',
@@ -109,7 +109,44 @@ class ATR_Shortcodes
                                                 <h3 class="card-product__h3">' . get_the_title() . '</h3>
                                             </a>
                                             <span class="card-product__price">' . wc_price($product_data->get_price()) . '</span>
+                                            <div class="card-product__button-buy-free">
+                                            <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
+                                                <button type="submit" name="add-to-cart" class="open-checkout button button__pink card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                                    <i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                        <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                                                        <path d="M3 9l4 0" />
+                                                        </svg>
+                                                    </i>
+                                                    Contraentrega
+                                                    <div class="loader-points">
+                                                        <div class="loader">
+                                                            <div class="circle">
+                                                                <div class="dot"></div>
+                                                                <div class="outline"></div>
+                                                            </div>
+                                                            <div class="circle">
+                                                                <div class="dot"></div>
+                                                                <div class="outline"></div>
+                                                            </div>
+                                                            <div class="circle">
+                                                                <div class="dot"></div>
+                                                                <div class="outline"></div>
+                                                            </div>
+                                                            <div class="circle">
+                                                                <div class="dot"></div>
+                                                                <div class="outline"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </form>
                                         </div>
+                                        
+                                            </div>
                                         </div>
                                     </div>
                                    ';

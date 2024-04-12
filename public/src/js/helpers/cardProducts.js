@@ -45,7 +45,7 @@ export const templateProduct = (products) => {
                 <span class="card-product__price">${price}</span>
                 <div class="card-product__button-buy-free">
                     <form class="cart" action="${action}" method="post" enctype="multipart/form-data">
-                        <button type="submit" name="add-to-cart" class="card-product__buy-free" value="${id}">
+                        <button type="submit" name="add-to-cart" class="open-checkout button-woo button__pink card-product__buy-free" value="${id}">
                             <i>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -55,7 +55,27 @@ export const templateProduct = (products) => {
                                 <path d="M3 9l4 0" />
                                 </svg>
                             </i>
-                            Pago Contraentrega
+                            Contraentrega
+                            <div class="loader-circle">
+                                <div class="loader">
+                                    <div class="circle">
+                                        <div class="dot"></div>
+                                        <div class="outline"></div>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="dot"></div>
+                                        <div class="outline"></div>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="dot"></div>
+                                        <div class="outline"></div>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="dot"></div>
+                                        <div class="outline"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </button>
                     </form>
                 </div>
@@ -64,5 +84,3 @@ export const templateProduct = (products) => {
         `;
     }).join('');
 }
-
-
