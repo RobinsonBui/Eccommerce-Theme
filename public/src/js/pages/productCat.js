@@ -92,6 +92,7 @@ async function fetchDataAndRenderProducts(adminAJAX, categorySlug, filters) {
 
         const data = await response.json();
         const productsWithHTML = data.map(product => ({
+            isVariable: product.is_variable,
             id: product.product_id,
             title: product.product_title,
             price: product.product_price,

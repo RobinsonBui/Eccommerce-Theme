@@ -11,6 +11,14 @@
     opacity: 0;
     transition: all .3s ease;
 
+    &__close {
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+
     &.open {
         top: 0;
         left: 0;

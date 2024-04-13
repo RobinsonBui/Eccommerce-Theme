@@ -108,48 +108,67 @@ class ATR_Shortcodes
                                             <a href="' . get_the_permalink() . '">
                                                 <h3 class="card-product__h3">' . get_the_title() . '</h3>
                                             </a>
-                                            <span class="card-product__price">' . wc_price($product_data->get_price()) . '</span>
-                                            <div class="card-product__button-buy-free">
-                                            <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
-                                                <button type="submit" name="add-to-cart" class="open-checkout button button__pink card-product__buy-free" value="' . esc_attr($product_id) . '">
-                                                    <i>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                        <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
-                                                        <path d="M3 9l4 0" />
-                                                        </svg>
-                                                    </i>
-                                                    Contraentrega
-                                                    <div class="loader-points">
-                                                        <div class="loader">
-                                                            <div class="circle">
-                                                                <div class="dot"></div>
-                                                                <div class="outline"></div>
-                                                            </div>
-                                                            <div class="circle">
-                                                                <div class="dot"></div>
-                                                                <div class="outline"></div>
-                                                            </div>
-                                                            <div class="circle">
-                                                                <div class="dot"></div>
-                                                                <div class="outline"></div>
-                                                            </div>
-                                                            <div class="circle">
-                                                                <div class="dot"></div>
-                                                                <div class="outline"></div>
-                                                            </div>
-                                                        </div>
+                                            <span class="card-product__price">' . wc_price($product_data->get_price()) . '</span>';
+                            if ($is_product_variable) {
+                                $output .=  '
+                                <a class="card-product__view" href="' . get_the_permalink() . '" >
+                                    <button class="button-woo button__pink card-product__view card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                        <i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                                <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                                            </svg>
+                                        </i>
+                                        Ver producto
+                                    </button>
+                                </a>
+                                    ';
+                            } else {
+                                $output .=
+                                    '<div class="card-product__button-buy-free">
+                                    <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
+                                        <button type="submit" name="add-to-cart" class="open-checkout button button__pink card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                            <i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                                                <path d="M3 9l4 0" />
+                                                </svg>
+                                            </i>
+                                            Contraentrega
+                                            <div class="loader-points">
+                                                <div class="loader">
+                                                    <div class="circle">
+                                                        <div class="dot"></div>
+                                                        <div class="outline"></div>
                                                     </div>
-                                                </button>
-                                            </form>
-                                        </div>
-                                        
+                                                    <div class="circle">
+                                                        <div class="dot"></div>
+                                                        <div class="outline"></div>
+                                                    </div>
+                                                    <div class="circle">
+                                                        <div class="dot"></div>
+                                                        <div class="outline"></div>
+                                                    </div>
+                                                    <div class="circle">
+                                                        <div class="dot"></div>
+                                                        <div class="outline"></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                   ';
+                                        </button>
+                                    </form>
+                                </div>';
+                            }
+
+                            $output .=
+                                '</div>
+                                </div>
+                            </div>
+                            ';
                         }
                         $output .= '</div>
                         </div>

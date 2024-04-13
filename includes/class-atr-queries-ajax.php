@@ -97,8 +97,26 @@ class ATR_QueriesAjax
                         <a href="' . get_the_permalink() . '">
                             <h3 class="card-product__h3">' . get_the_title() . '</h3>
                         </a>
-                        <span class="card-product__price">' . wc_price($product_data->get_price()) . '</span>
-                        <div class="card-product__button-buy-free">
+                        <span class="card-product__price">' . wc_price($product_data->get_price()) . '</span>';
+
+                    if ($is_product_variable) {
+                        $template_slide .= '
+                        <a class="card-product__view" href="' . get_the_permalink() . '" >
+                            <button class="button-woo button__pink card-product__view card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                                    </svg>
+                                </i>
+                                Ver producto
+                            </button>
+                        </a>
+                            ';
+                    } else {
+                        $template_slide .=
+                            '<div class="card-product__button-buy-free">
                             <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
                                 <button type="submit" name="add-to-cart" class="open-checkout button button__pink card-product__buy-free" value="' . esc_attr($product_id) . '">
                                     <i>
@@ -133,11 +151,12 @@ class ATR_QueriesAjax
                                     </div>
                                 </button>
                             </form>
-                        </div>
+                        </div>';
+                    }
+                    $template_slide .=
+                        '</div>
                     </div>
-                    </div>
-                </div>
-   ';
+                </div> ';
                     $product_data_array[] = $template_slide;
                 }
 
@@ -188,17 +207,20 @@ class ATR_QueriesAjax
 
         foreach ($products_category as $product) {
             $product_id = $product->get_id();
+            $product_data = wc_get_product($product_id);
+            $is_product_variable = $product_data->is_type('variable');
             $product_title = get_the_title($product_id);
             $product_price = wc_price($product->get_price());
             $product_thumbnail = get_the_post_thumbnail($product_id);
             $wc_action = esc_url(wc_get_cart_url());
             $product_permalink = get_the_permalink($product_id);
             $product_info = array(
-                'product_id' => $product_id,
-                'product_title' => $product_title,
-                'product_price' => $product_price,
+                'is_variable'       => $is_product_variable,
+                'product_id'        => $product_id,
+                'product_title'     => $product_title,
+                'product_price'     => $product_price,
                 'product_thumbnail' => $product_thumbnail,
-                'wc_action' => $wc_action,
+                'wc_action'         => $wc_action,
                 'product_permalink' => $product_permalink,
             );
 

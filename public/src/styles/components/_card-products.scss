@@ -18,6 +18,10 @@
 
     .swiper-product-replic {
         overflow: hidden;
+
+        .swiper-slide {
+            height: auto !important;
+        }
     }
 
     .swiper-slide {
@@ -57,7 +61,7 @@
     }
 
     &__card {
-        height: 100% !important;
+        height: 100%;
         padding: 10px;
         display: flex;
         flex-direction: column;
@@ -199,6 +203,11 @@
     &__price {
         font-weight: 600;
         color: $color-grey;
+    }
+
+    &__view {
+        display: flex;
+        justify-content: center;
     }
 
     &__buy-free {

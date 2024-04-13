@@ -1,1 +1,5 @@
 .main-categories {}
+
+.woocommerce .loader::before {
+    display: none;
+}
