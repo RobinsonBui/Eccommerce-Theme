@@ -95,7 +95,7 @@
 
     .swiper-slide {
         position: relative;
-        max-height: 450px;
+        height: calc(100vh - 80px);
         display: flex;
         align-items: center;
 
@@ -116,8 +116,8 @@
         }
 
         @include table {
-            aspect-ratio: 16/9;
-            max-height: 700px;
+            // aspect-ratio: 16/9;
+            // max-height: 700px;
         }
     }
 
