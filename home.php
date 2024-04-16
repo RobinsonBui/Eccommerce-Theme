@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="main main-blog">
     <div class="wpb_wrapper max-width">
-        <h1 class="title-h1"><?php echo esc_html(get_the_title()); ?></h1>
+        <h1 class="title-h1"><?php echo esc_html(get_the_content()); ?></h1>
     </div>
     <section class="the-blog">
         <div class="the-blog__wrapper max-width">
