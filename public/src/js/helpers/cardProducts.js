@@ -5,7 +5,7 @@ export const templateProduct = (products) => {
         let notIconsVariable = '';
         let buttonIsVariable = '';
         let buttonIsNotVariable = '';
-        if (isVariable) {
+        if (isVariable === true) {
             iconView = `
                 <a class="card-product__add-cart" href="${permalink}" >
                     <button type="submit" name="add-to-cart" class="card-product__add-cart" value="${id}">
