@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-<mian class="main main-blog">
+<main class="main main-blog">
     <div class="wpb_wrapper max-width">
-        <h1 class="title-h1" style="text-align: center;">Apoyamos la gestión de estilos de vida sostenible para las
-            empresas y organizaciones</h1>
+        <h1 class="title-h1"><?php echo esc_html(get_the_title()); ?></h1>
     </div>
     <section class="the-blog">
         <div class="the-blog__wrapper max-width">
@@ -18,31 +17,33 @@
                     $query->the_post();
             ?>
                     <article class="the-blog__article">
-                        <a href=" <?php the_permalink(); ?>">
+                        <a href="<?php the_permalink(); ?>">
                             <figure class="the-blog__figure">
                                 <?php the_post_thumbnail(); ?>
                             </figure>
                         </a>
-                        <a href=" <?php the_permalink(); ?>">
-                            <h5 class="the-blog__h3"> <?php the_title(); ?></h5>
+                        <a href="<?php the_permalink(); ?>">
+                            <h5 class="the-blog__h3"><?php the_title(); ?></h5>
                         </a>
-                        <a class="the-blog__a" href=" <?php the_permalink(); ?>"> leer más</a>
+                        <div class="the-blog__excerpt"><?php the_excerpt(); ?></div>
+                        <a class="the-blog__a" href="<?php the_permalink(); ?>">leer más</a>
                     </article>
             <?php
                 }
-                echo '<div class="the-blog__pagination pagination">';
-                echo paginate_links(array(
-                    'total'   => $query->max_num_pages,
-                    'current' => max(1, get_query_var('paged')),
-                    'prev_text' => __('Anterior'),
-                    'next_text' => __('Siguiente'),
-
-                ));
-                echo '</div>';
+                if ($query->found_posts > 9) {
+                    echo '<div class="the-blog__pagination pagination">';
+                    echo paginate_links(array(
+                        'total'   => $query->max_num_pages,
+                        'current' => max(1, get_query_var('paged')),
+                        'prev_text' => __('Anterior'),
+                        'next_text' => __('Siguiente'),
+                    ));
+                    echo '</div>';
+                }
                 wp_reset_postdata();
             }; ?>
         </div>
     </section>
-</mian>
+</main>
 
 <?php get_footer(); ?>

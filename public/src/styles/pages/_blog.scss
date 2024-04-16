@@ -1,3 +1,23 @@
+.title-h1 {
+    margin: 40px auto;
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 43px;
+
+    @include table {
+        font-size: 50px;
+        line-height: 53px;
+        gap: 15px;
+    }
+
+    @include desktop-inter {
+        font-size: 60px;
+        line-height: 63px;
+    }
+}
+
 .the-blog {
     &__wrapper {
         position: relative;
