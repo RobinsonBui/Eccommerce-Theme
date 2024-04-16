@@ -15,7 +15,7 @@ get_header(); ?>
         <h1 class="h1 single-blog__h1"><?php the_title(); ?></h1>
         <div class="single-blog__info">
             <span class="single-blog__span"><?php the_author(); ?></span>
-            <span class="single-blog__data">Publicado: <?php the_date(); ?></span>
+            <span class="single-blog__data">Publicado por: <?php the_author(); ?></span>
         </div>
     </section>
 
