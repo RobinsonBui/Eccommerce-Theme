@@ -13,11 +13,11 @@ class ATR_Shortcodes
             $atts,
             'slide_replic_shortcode'
         ); ?>
-        <section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
-            <div class="shortcode-grid__wrapper max-width">
-                <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
+<section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
+    <div class="shortcode-grid__wrapper max-width">
+        <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
 
-                <?php
+        <?php
                 if (!empty($atts['category'])) {
                     $args = array(
                         'post_type'      => 'product',
@@ -36,8 +36,6 @@ class ATR_Shortcodes
                             $product_id = get_the_ID();
                             $product_data = wc_get_product($product_id);
                             $is_product_variable = $product_data->is_type('variable');
-                            $stock_product_quantity = $product_data->get_stock_quantity();
-
                             $output .= '<div class="swiper-slide">
                                         <div class="card-product__card">';
 

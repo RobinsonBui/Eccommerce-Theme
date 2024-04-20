@@ -1,68 +1,69 @@
 .main-checkout {
     margin: 100px auto;
 
-    h3 {
-        margin-bottom: 30px;
-        font-weight: 500;
-        font-size: 22px;
+    button {
+        cursor: pointer;
     }
 
-    .checkout {
-        display: grid;
-        gap: 20px;
+    .wc-block {
+        &-components {
+            &-order-summary-item {
+                display: grid !important;
+                grid-template-columns: 1fr 3fr;
+                grid-template-areas: 'a b' 'c c';
 
-        @include table {
-            grid-template-columns: 1.4fr 1fr;
+                &__image {
+                    grid-area: a;
+                }
+
+                &__description {
+                    padding: 0 0 10px 0 !important;
+                    grid-area: b;
+                    border-bottom: 1px solid black;
+                }
+
+
+
+                &__total-price {
+                    grid-area: c;
+                    text-align: center !important;
+                }
+            }
+
+            // &-formatted-money-amount {
+            //     display: none;
+            // }
+
+            &-product-name {
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            &-button {
+                background-color: $color-magenta;
+                color: white;
+            }
         }
 
-        #order_review_heading {
-            display: none;
-        }
-    }
+        &-checkout {
 
-    .col2-set {
-        margin-bottom: 40px;
+            &__actions_row {
+                a {
+                    width: max-content;
+                    display: grid;
+                    grid-template-columns: 20px max-content;
+                    align-items: center;
+                    gap: 10px;
 
-        .col-2 {
-            display: none;
-        }
+                    svg {
+                        position: initial;
+                        transform: none;
+                    }
 
-        @include table {
-
-            .col-1 {
-                width: 100%;
+                }
             }
         }
     }
 
-    .woocommerce-billing-fields__field-wrapper {
-        @include table {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 50px;
-            row-gap: 10px;
 
-
-        }
-
-        p {
-            width: 100%;
-        }
-
-        .select2-container .select2-selection--single .select2-selection__arrow {
-            height: 100%;
-        }
-
-        .select2-container .select2-selection--single,
-        input {
-            width: 100%;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            background-color: rgba(241, 241, 241, 0.741);
-            padding: 10px;
-        }
-
-
-    }
 }

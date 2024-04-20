@@ -105,12 +105,15 @@ get_header(); ?>
             </div>
         </section>
 
-
         <?php
-        $product_categories = get_the_terms(get_the_ID(), 'product_cat');
-        if ($product_categories && !is_wp_error($product_categories)) {
-            $first_category = reset($product_categories);
-            echo  do_shortcode('[slide_replic category="' . $first_category->name . '" bg="white" cl="black" tl="Te podría interesar"]');
+        if (get_field('productos_relacionados')) {
+            get_template_part('template-parts/utils/util', 'related');
+        } else {
+            $product_categories = get_the_terms(get_the_ID(), 'product_cat');
+            if ($product_categories && !is_wp_error($product_categories)) {
+                $first_category = reset($product_categories);
+                echo  do_shortcode('[slide_replic category="' . $first_category->name . '" bg="white" cl="black" tl="Te podría interesar"]');
+            }
         }
         ?>
 
