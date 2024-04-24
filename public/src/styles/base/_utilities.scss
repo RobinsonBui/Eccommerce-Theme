@@ -34,38 +34,37 @@ main {
         background-color: $color-lila;
     }
 
-    &__pink {
-        border: 1px solid $color-pink-extra-light;
-        background-color: $color-pink-extra-light;
-        color: black;
+    &__primary {
+        border: 1px solid $color-primary;
+        background-color: $color-primary;
+        color: white;
 
         &:hover {
-            background-color: $color-pink-light;
+            background-color: $color-secondary;
 
-            color: $color-lila;
+            color: white;
         }
     }
 }
 
 .h1 {
-    line-height: 2.75rem;
+    line-height: 2.31rem;
     font-size: 2.13rem;
     font-weight: 700;
 
     @include table {
         font-size: 2.5rem;
+        line-height: 2.69rem;
     }
 
     @include desktop {
         font-size: 2.81rem;
+        line-height: 3rem;
     }
 
     @include desktop-medium {
         font-size: 3.13rem;
-    }
-
-    @include desktop-extra {
-        font-size: 3.75rem;
+        line-height: 3.44rem;
     }
 }
 
@@ -186,6 +185,9 @@ main {
 
     li {
         list-style: initial;
+        line-height: 1.78;
+        font-size: 18px;
+        font-weight: 300;
     }
 
     b,

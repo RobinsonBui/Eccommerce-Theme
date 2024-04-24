@@ -3,7 +3,7 @@
     margin-top: 200px;
     padding-bottom: 70px;
     z-index: 3;
-    background-color: $color-lila;
+    background-color: $color-primary;
 
     &::after {
         @include table {
@@ -14,7 +14,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: $color-lila;
+            background-color: $color-secondary;
         }
     }
 
@@ -32,14 +32,14 @@
             width: 120%;
             height: 300px;
             border-radius: 50%;
-            background-color: $color-lila;
+            background-color: $color-secondary;
         }
 
         &::after {
             width: 115%;
             left: auto;
             bottom: -220px;
-            background-color: $color-pink-extra-light;
+            background-color: $color-primary;
 
             @include table {
                 width: 150%;

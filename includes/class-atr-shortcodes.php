@@ -13,11 +13,11 @@ class ATR_Shortcodes
             $atts,
             'slide_replic_shortcode'
         ); ?>
-<section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
-    <div class="shortcode-grid__wrapper max-width">
-        <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
+        <section class="shortcode-grid" style="background-color: <?php echo $atts['bg']; ?>;">
+            <div class="shortcode-grid__wrapper max-width">
+                <h2 class="h2 shortcode-grid__h2" style="color: <?php echo $atts['cl']; ?>;"><?php echo $atts['tl']; ?></h2>
 
-        <?php
+                <?php
                 if (!empty($atts['category'])) {
                     $args = array(
                         'post_type'      => 'product',
@@ -110,7 +110,7 @@ class ATR_Shortcodes
                             if ($is_product_variable) {
                                 $output .=  '
                                 <a class="card-product__view" href="' . get_the_permalink() . '" >
-                                    <button class="button-woo button__pink card-product__view card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                    <button class="button-woo button__primary card-product__view card-product__buy-free" value="' . esc_attr($product_id) . '">
                                         <i>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -126,7 +126,7 @@ class ATR_Shortcodes
                                 $output .=
                                     '<div class="card-product__button-buy-free">
                                     <form class="cart" action="' . esc_url(wc_get_cart_url()) . '" method="post" enctype="multipart/form-data">
-                                        <button type="submit" name="add-to-cart" class="open-checkout button-woo button__pink card-product__buy-free" value="' . esc_attr($product_id) . '">
+                                        <button type="submit" name="add-to-cart" class="open-checkout button-woo button__primary card-product__buy-free" value="' . esc_attr($product_id) . '">
                                             <i>
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
