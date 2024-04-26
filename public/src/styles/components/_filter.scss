@@ -97,7 +97,7 @@
 
     &__h2 {
         margin-bottom: 20px;
-        color: $color-lila;
+        color: $color-primary;
         font-size: 18px;
         letter-spacing: normal;
 
@@ -123,7 +123,7 @@
         }
 
         &.active {
-            background-color: $color-lila;
+            background-color: $color-primary;
             color: white;
             font-weight: 600;
         }
@@ -261,7 +261,7 @@
             left: 0;
             z-index: -10;
             height: 0%;
-            width: 100%;
+            width: max-content;
             padding: 8px 15px;
             display: grid;
             justify-content: space-between;
@@ -328,5 +328,28 @@
             gap: 20px;
         }
     }
+
+    &__pagination {
+        margin-top: 40px;
+        display: none;
+        justify-content: space-between;
+
+        &--button {
+            padding: 8px 20px;
+            border-radius: 15px;
+            width: max-content;
+            color: white;
+            background-color: $color-primary;
+            cursor: pointer;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: .3;
+            }
+        }
+
+    }
+
+
 
 }

@@ -51,7 +51,7 @@
         font-weight: 700;
 
         &:hover {
-            color: $color-lila;
+            color: $color-primary;
         }
 
         &::after {
@@ -81,7 +81,7 @@
             left: 0;
             width: 15px;
             height: 15px;
-            background-color: $color-lila;
+            background-color: $color-primary;
             border-radius: 50%;
             transition: all .3s ease;
         }
@@ -112,7 +112,7 @@
             place-items: center;
             text-decoration: none;
             font-weight: 600;
-            color: $color-lila;
+            color: $color-primary;
             transition: all .3s ease;
 
             &::after {
@@ -121,7 +121,7 @@
 
             &.current,
             &:hover {
-                background-color: $color-lila;
+                background-color: $color-primary;
                 color: white;
             }
 
@@ -131,7 +131,7 @@
                 right: 0;
                 width: max-content;
                 padding: 0px 16px;
-                border: 1px solid $color-lila;
+                border: 1px solid $color-primary;
                 border-radius: 10px;
                 text-transform: capitalize;
                 font-weight: 600;

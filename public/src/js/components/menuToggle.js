@@ -6,7 +6,7 @@ const menuResponsive = document.querySelector('#innerMenu'),
     menuWrapper = menuResponsive.querySelector('#menuMovil');
 
 const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-if (windowWidth < 1024) {
+if (windowWidth < 764) {
     menuWrapper.appendChild(menuToggle);
 } else {
     menuResponsive.contains(menuToggle) && menuWrapper.removeChild(menuToggle);

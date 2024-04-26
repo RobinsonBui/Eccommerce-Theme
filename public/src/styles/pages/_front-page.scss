@@ -43,7 +43,6 @@
         }
     }
 
-
     &__h2 {
         color: #FFF;
         font-size: 40px;
@@ -70,8 +69,6 @@
         }
     }
 
-    &__button {}
-
     &__content-controls {
         width: 100%;
         position: relative;
@@ -92,8 +89,6 @@
     .swiper-hero-front {
         position: relative;
     }
-
-    .swiper-wrapper {}
 
     .swiper-slide {
         position: relative;
@@ -123,19 +118,14 @@
         }
     }
 
-    .swiper-pagination {}
-
     .swiper-button-next,
     .swiper-button-prev {
-
 
         &::after {
             color: black;
             font-size: 20px;
         }
     }
-
-    .swiper-button-next {}
 }
 
 .tabs-products {
@@ -153,8 +143,6 @@
     &__slide-tab {
         position: relative;
     }
-
-    &__tabs {}
 
     &__nav {
         background-color: $color-secondary;
@@ -334,9 +322,6 @@
         line-height: normal;
         text-transform: uppercase;
     }
-
-
-
 }
 
 .card-product {
@@ -596,7 +581,7 @@
         &--tittle {
             margin-top: 15px;
             display: flex;
-            border-bottom: 2px solid $color-lila;
+            border-bottom: 2px solid $color-primary;
         }
 
         &--h2 {
@@ -614,19 +599,4 @@
             padding: 0 5px;
         }
     }
-
-
-
-    &__content-date {}
-
-    &__date {}
-
-    &__month {}
-
-    &__day {}
-
-    &__h2 {}
-
-    &__h2--blog {}
-
 }

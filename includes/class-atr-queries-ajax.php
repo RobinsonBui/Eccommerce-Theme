@@ -22,7 +22,6 @@ class ATR_QueriesAjax
                     $product_id = get_the_ID();
                     $product_data = wc_get_product($product_id);
                     $is_product_variable = $product_data->is_type('variable');
-                    $stock_product_quantity = $product_data->get_stock_quantity();
                     $template_slide = '<div class="swiper-slide"><div class="card-product__card">';
 
                     if ($product_data->get_sale_price() && $category_slug_product !== 'productos-nuevos') {
@@ -171,17 +170,20 @@ class ATR_QueriesAjax
     }
     public function get_filter_data()
     {
-        $category_slug = isset($_POST['categorySlug']) ? sanitize_text_field($_POST['categorySlug']) : '';
-        $filters = isset($_POST['filters']) ? json_decode(stripslashes($_POST['filters']), true) : '';
+        $category_slug = isset($_POST['categorySlug']) ? sanitize_text_field($_POST['categorySlug'])        : '';
+        $filters       = isset($_POST['filters'])      ? json_decode(stripslashes($_POST['filters']), true) : '';
+        $page          = isset($_POST['page'])         ? intval($_POST['page'])                             : 1;
+        $per_page      = isset($_POST['perPage'])      ? intval($_POST['perPage'])                          : 3;
 
+        $offset    = ($page - 1) * $per_page;
         $tax_query = array();
 
 
         if (!empty($category_slug)) {
             $tax_query[] = array(
                 'taxonomy' => 'product_cat',
-                'field' => 'slug',
-                'terms' => $category_slug,
+                'field'    => 'slug',
+                'terms'    => $category_slug,
             );
         }
 
@@ -190,31 +192,32 @@ class ATR_QueriesAjax
             foreach ($filters as $attribute => $terms) {
                 $tax_query[] = array(
                     'taxonomy' => $attribute,
-                    'field' => 'slug',
-                    'terms' => $terms,
+                    'field'    => 'slug',
+                    'terms'    => $terms,
                 );
             }
         }
 
         $args = array(
-            'post_type' => 'product',
-            'posts_per_page' => -1,
-            'tax_query' => $tax_query,
+            'post_type'      => 'product',
+            'posts_per_page' => $per_page,
+            'offset'         => $offset,
+            'tax_query'      => $tax_query,
         );
 
         $products_category = wc_get_products($args);
         $response = array();
 
         foreach ($products_category as $product) {
-            $product_id = $product->get_id();
-            $product_data = wc_get_product($product_id);
+            $product_id          = $product->get_id();
+            $product_data        = wc_get_product($product_id);
             $is_product_variable = $product_data->is_type('variable');
-            $product_title = get_the_title($product_id);
-            $product_price = wc_price($product->get_price());
-            $product_thumbnail = get_the_post_thumbnail($product_id);
-            $wc_action = esc_url(wc_get_cart_url());
-            $product_permalink = get_the_permalink($product_id);
-            $product_info = array(
+            $product_title       = get_the_title($product_id);
+            $product_price       = wc_price($product->get_price());
+            $product_thumbnail   = get_the_post_thumbnail($product_id);
+            $wc_action           = esc_url(wc_get_cart_url());
+            $product_permalink   = get_the_permalink($product_id);
+            $product_info        = array(
                 'is_variable'       => $is_product_variable,
                 'product_id'        => $product_id,
                 'product_title'     => $product_title,

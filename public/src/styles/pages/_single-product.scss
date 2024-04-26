@@ -4,6 +4,10 @@
     margin: 0 auto;
 }
 
+.single_add_to_cart_button {
+    background-color: $color-primary !important;
+}
+
 .single-product {
     &__shop {
         margin: 30px 0;
@@ -87,15 +91,6 @@
         }
     }
 
-    .swiper-single-product {}
-
-    .swiper-wrapper {}
-
-
-
-    .swiper-pagination {}
-
-
     &__data {
         margin-top: 30px;
 
@@ -116,10 +111,14 @@
 
     .stock {
         font-size: clamp(12px, 1.2vw, 14px);
-        color: green;
+        color: $color-accent;
     }
 
-    &__price {}
+    &__price {
+        font-weight: 600;
+        font-size: clamp(16px, 1.9vw, 20px);
+        color: $color-secondary;
+    }
 
     &__sale {}
 
@@ -180,7 +179,7 @@
     }
 
     &__h3 {
-        color: $color-lila;
+        color: $color-primary;
         font-size: 18px;
         line-height: normal;
         font-weight: 700;
