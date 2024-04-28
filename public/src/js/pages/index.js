@@ -1,2 +1,3 @@
 import './frontPage';
-import './productCat'; 
+import './productCat';
+import './singleProduct';

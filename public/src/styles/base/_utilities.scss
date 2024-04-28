@@ -22,6 +22,7 @@ main {
 .button {
     width: max-content;
     display: flex;
+    align-items: center;
     padding: 22px 60px;
     color: white;
     text-transform: uppercase;
@@ -29,6 +30,10 @@ main {
     font-weight: 700;
     cursor: pointer;
     transition: all .3s ease;
+
+    svg {
+        fill: transparent;
+    }
 
     &__lila {
         background-color: $color-lila;
@@ -41,7 +46,16 @@ main {
 
         &:hover {
             background-color: $color-secondary;
+            color: white;
+        }
+    }
 
+    &__accent {
+        background-color: $color-accent;
+        color: black;
+
+        &:hover {
+            background-color: $color-primary;
             color: white;
         }
     }

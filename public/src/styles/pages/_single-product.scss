@@ -97,6 +97,24 @@
         @include table {
             margin-top: 0;
         }
+
+        .button-woo {
+            width: 100%;
+            margin-top: 30px;
+            gap: 10px;
+            justify-content: center;
+
+            svg {
+                filter: invert(1);
+                transition: all .3s ease;
+            }
+
+            &:hover {
+                svg {
+                    filter: invert(0);
+                }
+            }
+        }
     }
 
     &__h1 {
@@ -155,9 +173,15 @@
 
     .cart,
     .woocommerce-variation-add-to-cart {
+        margin-top: 15px;
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: space-between;
+        gap: 20px;
+
+        .button {
+            width: 100%;
+        }
     }
 
     .qty {

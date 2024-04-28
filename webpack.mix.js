@@ -17,7 +17,7 @@ mix
   .setPublicPath("/");
 
 mix.browserSync({
-  proxy: "http://ecoommerce.local/",
+  proxy: "http://skinnurture.local/",
   ui: {
     port: 8080,
   },
