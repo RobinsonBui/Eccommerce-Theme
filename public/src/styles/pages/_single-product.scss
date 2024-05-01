@@ -103,6 +103,9 @@
             margin-top: 30px;
             gap: 10px;
             justify-content: center;
+            -webkit-animation: jello-horizontal 0.9s both;
+            animation: jello-horizontal 0.9s both;
+
 
             svg {
                 filter: invert(1);
@@ -127,9 +130,21 @@
         font-size: clamp(14px, 1.4vw, 16px);
     }
 
+    &__last-unities {
+        width: max-content;
+        margin-top: 30px;
+        padding: 10px 20px;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        background-color: $color-complementary;
+        color: black;
+        -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+        animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+
     .stock {
-        font-size: clamp(12px, 1.2vw, 14px);
-        color: $color-accent;
+        display: none;
     }
 
     &__price {

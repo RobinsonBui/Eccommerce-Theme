@@ -94,8 +94,13 @@ get_header(); ?>
 
                     <div class="single-product__quantity">
                         <?php
+                        $extra_data =  get_field('especials');
                         if ($product->is_purchasable()) {
-                            woocommerce_quantity_input(array(), $product, false);
+                            if ($extra_data['ultimas_unidades'] === true) {
+                                echo '<span class="single-product__last-unities">Ultimas unidades</span>';
+                            } else {
+                                woocommerce_quantity_input(array(), $product, false);
+                            }
                             echo '<div class="single-product__add-to-cart">';
                             woocommerce_template_single_add_to_cart();
                             echo '</div>';
