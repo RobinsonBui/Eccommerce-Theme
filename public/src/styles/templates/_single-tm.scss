@@ -1,0 +1,11 @@
+.tm-single-content,
+.hero-tm-single {
+    max-width: 940px;
+    margin: 40px auto;
+
+    &__h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}

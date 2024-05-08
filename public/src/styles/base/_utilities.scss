@@ -115,6 +115,10 @@ main {
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         font-size: 18px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     h1 {
