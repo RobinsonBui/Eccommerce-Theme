@@ -232,4 +232,5 @@ class ATR_QueriesAjax
 
         wp_send_json($response);
     }
+    
 }
