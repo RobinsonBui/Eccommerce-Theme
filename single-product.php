@@ -104,7 +104,9 @@ get_header(); ?>
                             echo '<div class="single-product__add-to-cart">';
                             woocommerce_template_single_add_to_cart();
                             echo '</div>';
-                        }
+                        }else{
+
+                        };
                         ?>
                         <button id="buyNowProduct" data-id="<?php echo $product->get_id(); ?>"
                             data-base-url="<?php echo esc_url(wc_get_checkout_url()); ?>"
