@@ -93,6 +93,16 @@
 
 }
 
+.tmp-pattern-gif {
+    &__wrapper {
+        img {
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+    }
+}
+
+
 .tmp-pattern-info {
     padding: 50px 0;
 
@@ -117,13 +127,16 @@
         margin: 20px auto;
         display: grid;
         gap: 20px;
+        text-align: start;
 
-        &--top {
-            text-align: end;
-        }
+        @include table-extra {
+            &--top {
+                text-align: end;
+            }
 
-        &--bottom {
-            text-align: start;
+            &--bottom {
+                text-align: start;
+            }
         }
     }
 

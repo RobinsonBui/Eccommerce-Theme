@@ -21,8 +21,8 @@ get_header('pattern'); ?>
         </div>
     </section>
 
+    <?php $product = get_field('producto'); ?>
     <section class="pattern-product">
-        <?php $product = get_field('producto'); ?>
         <div class="pattern-product__wrapper max-width">
             <div class="pattern-product__media">
                 <?php $product['producto_pautado']; ?>
@@ -130,7 +130,13 @@ get_header('pattern'); ?>
             </div>
         </div>
     </section>
-
+    <?php if ($product['img']) : ?>
+    <section class="tmp-pattern-gif">
+        <div class="tmp-pattern-gif__wrapper max-width">
+            <img src="<?php echo $product['img']['url']; ?>" alt="">
+        </div>
+    </section>
+    <?php endif; ?>
     <section class="tmp-pattern-info">
         <div class="tmp-pattern-info__wrapper max-width">
             <?php $info_product = get_field('beneficios'); ?>
