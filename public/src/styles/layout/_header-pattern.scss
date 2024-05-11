@@ -1,0 +1,31 @@
+.banner-ptrn {
+    padding: 10px;
+    overflow: hidden;
+    background-color: $color-complementary;
+    color: black;
+
+    &__content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+
+        p {
+            display: inline-block;
+            margin-right: 40px;
+            font-weight: 500;
+        }
+    }
+
+}
+
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

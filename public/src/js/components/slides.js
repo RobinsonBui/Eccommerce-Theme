@@ -66,7 +66,58 @@ const swiperProducts = new Swiper('.swiper-ajax-product', {
     },
 
 });
+const swiperComponents = new Swiper('.swiper-components', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 10000,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        640: {
+            slidesPerView: 2,
+        },
+        940: {
+            slidesPerView: 3,
+        },
+        1240: {
+            slidesPerView: 4,
+        }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
 
+});
+const swiperResults = new Swiper('.swiper-results', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 10000,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        640: {
+            slidesPerView: 2,
+        },
+        940: {
+            slidesPerView: 1,
+        },
+        1240: {
+            slidesPerView: 2,
+        }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+
+});
 const swiperReplic = new Swiper('.swiper-product-replic', {
     spaceBetween: 20,
     autoplay: {
