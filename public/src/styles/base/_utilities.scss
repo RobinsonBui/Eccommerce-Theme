@@ -86,7 +86,7 @@ main {
     line-height: normal;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 7.6px;
+    letter-spacing: 3px;
 
     @include table {
         font-size: 34px;
@@ -98,7 +98,7 @@ main {
 }
 
 .h3 {
-    font-size: 18px;
+    font-size: 22px;
     line-height: normal;
     font-weight: 500;
     letter-spacing: 3px;
@@ -121,6 +121,7 @@ main {
         margin-inline-end: 0px;
         font-size: 18px;
         font-weight: 300;
+
         &:last-child {
             margin-bottom: 0;
         }

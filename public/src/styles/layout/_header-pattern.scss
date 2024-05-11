@@ -3,6 +3,7 @@
     overflow: hidden;
     background-color: $color-complementary;
     color: black;
+    width: max-content;
 
     &__content {
         display: inline-block;
@@ -22,7 +23,7 @@
 
 @keyframes marquee {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
 
     100% {

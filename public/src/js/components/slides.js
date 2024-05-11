@@ -70,7 +70,7 @@ const swiperComponents = new Swiper('.swiper-components', {
     slidesPerView: 1,
     spaceBetween: 20,
     autoplay: {
-        delay: 10000,
+        delay: 2000,
     },
     breakpoints: {
         320: {
@@ -96,7 +96,7 @@ const swiperResults = new Swiper('.swiper-results', {
     slidesPerView: 1,
     spaceBetween: 20,
     autoplay: {
-        delay: 10000,
+        delay: 2000,
     },
     breakpoints: {
         320: {
