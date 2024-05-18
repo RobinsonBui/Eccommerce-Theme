@@ -28,9 +28,7 @@ get_header('pattern'); ?>
                 <?php $product['producto_pautado']; ?>
                 <div class="single-product__slide">
                     <i class="single-product__zoom" id="zoom-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in-area"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in-area" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M15 13v4" />
                             <path d="M13 15h4" />
@@ -54,16 +52,16 @@ get_header('pattern'); ?>
 
                                     if ($image_url) {
                             ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo esc_url($image_url); ?>" alt="" />
-                            </div>
-                            <?php
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo esc_url($image_url); ?>" alt="" />
+                                        </div>
+                                <?php
                                     }
                                 }
                             } else {  ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
-                            </div>
+                                <div class="swiper-slide">
+                                    <img src="<?php echo the_post_thumbnail_url() ?>" alt="" />
+                                </div>
                             <?php }
                             ?>
                         </div>
@@ -77,17 +75,11 @@ get_header('pattern'); ?>
                     <span class="lightbox__close" id="close-lightbox">✖</span>
                     <img id="lightbox-img" src="" alt="Ampliación de imagen">
                     <div class="lightbox__nav">
-                        <button id="prev-img"><svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                        <button id="prev-img"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M15 6l-6 6l6 6" />
                             </svg></button>
-                        <button id="next-img"><svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                        <button id="next-img"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M9 6l6 6l-6 6" />
                             </svg></button>
@@ -113,17 +105,16 @@ get_header('pattern'); ?>
                     <?php $data_product = $product['producto_pautado']; ?>
                     <ul class="pattern-product__ul">
                         <?php foreach ($product['opciones_de_compra'] as $options) : ?>
-                        <li class="pattern-product__li" data-id="<?php echo $data_product->ID; ?>"
-                            data-base-url="<?php echo esc_url(wc_get_checkout_url()); ?>">
-                            <a href="#" class="pattern-product__purchase-option"
-                                data-quantity="<?php echo $options['cantidad'] ?>">
-                                <?php echo $options['titulo_de_compra']; ?>
-                                <?php if ($options['texto_ahorro']) {
+                            <li class="pattern-product__li" data-id="<?php echo $data_product->ID; ?>" data-base-url="<?php echo esc_url(wc_get_checkout_url()); ?>" data-quantity="<?php echo $options['cantidad'] ?>">
+                                <span class="pattern-product__purchase-option">
+                                    <?php echo $options['titulo_de_compra']; ?>
+                                    <?php if ($options['texto_ahorro']) {
                                         echo '<span class="pattern-product__prom" style="color: ' . $colors['complementary'] . '"> ' . $options['texto_ahorro'] . '</span>';
                                     } ?>
-                            </a>
-                            <b style="color: <?php echo $colors['primary']; ?>;">$<?php echo $options['precio']; ?></b>
-                        </li>
+                                </span>
+                                <b style=" color: <?php echo $colors['primary']; ?>;">
+                                    $<?php echo $options['precio']; ?></b>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -131,11 +122,11 @@ get_header('pattern'); ?>
         </div>
     </section>
     <?php if ($product['img']) : ?>
-    <section class="tmp-pattern-gif">
-        <div class="tmp-pattern-gif__wrapper max-width">
-            <img src="<?php echo $product['img']['url']; ?>" alt="">
-        </div>
-    </section>
+        <section class="tmp-pattern-gif">
+            <div class="tmp-pattern-gif__wrapper max-width">
+                <img src="<?php echo $product['img']['url']; ?>" alt="">
+            </div>
+        </section>
     <?php endif; ?>
     <section class="tmp-pattern-info">
         <div class="tmp-pattern-info__wrapper max-width">
@@ -146,29 +137,29 @@ get_header('pattern'); ?>
             <div class="tmp-pattern-info__container">
                 <ul class="tmp-pattern-info__ul tmp-pattern-info__ul--top">
                     <?php foreach ($info_product['items_top'] as $item) : ?>
-                    <li class="tmp-pattern-info__li">
-                        <h3 class="tmp-pattern-info__h3"><?php echo $item['titulo']; ?></h3>
-                        <p class="p tmp-pattern-info__p"><?php echo $item['descripcion']; ?></p>
-                    </li>
+                        <li class="tmp-pattern-info__li">
+                            <h3 class="tmp-pattern-info__h3"><?php echo $item['titulo']; ?></h3>
+                            <p class="p tmp-pattern-info__p"><?php echo $item['descripcion']; ?></p>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
                 <div class="tmp-pattern-info__media">
                     <?php if ($info_product['tipodemedia']['media'] === 'Gif' || $info_product['tipodemedia']['media'] === 'Img') : ?>
-                    <figure class="tmp-pattern-info__figure">
-                        <img src="<?php if ($info_product['tipodemedia']['media'] === 'Gif') {
+                        <figure class="tmp-pattern-info__figure">
+                            <img src="<?php if ($info_product['tipodemedia']['media'] === 'Gif') {
                                             echo $info_product['tipodemedia']['gif_url'];
                                         } else {
                                             echo $info_product['tipodemedia']['imagen']['url'];
                                         } ?>" alt="<?php echo $item['titulo']; ?>">
-                    </figure>
+                        </figure>
                     <?php endif; ?>
                 </div>
                 <ul class="tmp-pattern-info__ul tmp-pattern-info__ul--bottom">
                     <?php foreach ($info_product['items_bottom'] as $item) : ?>
-                    <li class="tmp-pattern-info__li">
-                        <h3 class="tmp-pattern-info__h3"><?php echo $item['titulo']; ?></h3>
-                        <p class="p tmp-pattern-info__p"><?php echo $item['descripcion']; ?></p>
-                    </li>
+                        <li class="tmp-pattern-info__li">
+                            <h3 class="tmp-pattern-info__h3"><?php echo $item['titulo']; ?></h3>
+                            <p class="p tmp-pattern-info__p"><?php echo $item['descripcion']; ?></p>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
 
@@ -187,15 +178,15 @@ get_header('pattern'); ?>
                 <div class="swiper-components">
                     <div class="swiper-wrapper">
                         <?php foreach ($components['items'] as $component) : ?>
-                        <div class="swiper-slide">
-                            <div class="tmp-pattern-components__card">
-                                <?php if ($component['icono']) {
+                            <div class="swiper-slide">
+                                <div class="tmp-pattern-components__card">
+                                    <?php if ($component['icono']) {
                                         echo '<img src="' . $component['icono']['url'] . '" alt="' . $component['icono']['alt'] . '">';
                                     } ?>
-                                <h3 class="tmp-pattern-components__h3"><?php echo $component['titulo']; ?></h3>
-                                <p class="p tmp-pattern-components__p"><?php echo $component['descripcion']; ?></p>
+                                    <h3 class="tmp-pattern-components__h3"><?php echo $component['titulo']; ?></h3>
+                                    <p class="p tmp-pattern-components__p"><?php echo $component['descripcion']; ?></p>
+                                </div>
                             </div>
-                        </div>
                         <?php endforeach; ?>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -208,10 +199,8 @@ get_header('pattern'); ?>
     <section class="tmp-pattern-results">
         <div class="tmp-pattern-results__wrapper max-width">
             <?php $results =  get_field('resultados'); ?>
-            <div class="tmp-pattern-results__figure"
-                style="background-image: url('<?php echo $results['imagen_bg']['url']; ?>');">
-                <img src="<?php echo $results['imagen_destacada']['url']; ?>"
-                    alt="<?php echo $results['imagen_destacada']['alt']; ?>">
+            <div class="tmp-pattern-results__figure" style="background-image: url('<?php echo $results['imagen_bg']['url']; ?>');">
+                <img src="<?php echo $results['imagen_destacada']['url']; ?>" alt="<?php echo $results['imagen_destacada']['alt']; ?>">
             </div>
             <div class="tmp-pattern-results__data">
                 <h3 class="tmp-pattern-results__h3 h3" style="color: <?php echo $colors['primary']; ?>;">
@@ -220,12 +209,12 @@ get_header('pattern'); ?>
                     <div class="swiper-results">
                         <div class="swiper-wrapper">
                             <?php foreach ($results['testimonios'] as $testimony) : ?>
-                            <div class="swiper-slide">
-                                <div class="tmp-pattern-results__testimony">
-                                    <p class="p tmp-pattern-results__p"><?php echo $testimony['testimonio']; ?></p>
-                                    <h4 class="tmp-pattern-results__h4"><?php echo $testimony['nombre']; ?></h4>
+                                <div class="swiper-slide">
+                                    <div class="tmp-pattern-results__testimony">
+                                        <p class="p tmp-pattern-results__p"><?php echo $testimony['testimonio']; ?></p>
+                                        <h4 class="tmp-pattern-results__h4"><?php echo $testimony['nombre']; ?></h4>
+                                    </div>
                                 </div>
-                            </div>
                             <?php endforeach; ?>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -235,8 +224,7 @@ get_header('pattern'); ?>
             </div>
         </div>
         <figure class="tmp-pattern-results__fig max-width">
-            <img src="<?php echo $results['imagen_persuasiva']['url']; ?>"
-                alt="<?php echo $results['imagen_persuasiva']['alt']; ?>">
+            <img src="<?php echo $results['imagen_persuasiva']['url']; ?>" alt="<?php echo $results['imagen_persuasiva']['alt']; ?>">
         </figure>
     </section>
 
@@ -247,14 +235,14 @@ get_header('pattern'); ?>
                 <?php echo $pqs['titulo']; ?></h2>
             <div class="tmp-pattern-pqs__accordion">
                 <?php foreach ($pqs['preguntas'] as $pq) : ?>
-                <details class="tmp-pattern-pqs__details">
-                    <summary class="tmp-pattern-pqs__summary">
-                        <h3 class="tmp-pattern-pqs__h3"> <?php echo $pq['pregunta']; ?></h3>
-                    </summary>
-                    <div class="tmp-pattern-pqs__content content">
-                        <?php echo $pq['respuesta']; ?>
-                    </div>
-                </details>
+                    <details class="tmp-pattern-pqs__details">
+                        <summary class="tmp-pattern-pqs__summary">
+                            <h3 class="tmp-pattern-pqs__h3"> <?php echo $pq['pregunta']; ?></h3>
+                        </summary>
+                        <div class="tmp-pattern-pqs__content content">
+                            <?php echo $pq['respuesta']; ?>
+                        </div>
+                    </details>
                 <?php endforeach; ?>
             </div>
     </section>

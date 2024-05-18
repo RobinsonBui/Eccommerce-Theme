@@ -114,9 +114,9 @@ class ATR_Master
         $this->charger->add_action('wp_ajax_get_filter_data', $this->atr_queries_ajax, 'get_filter_data');
         $this->charger->add_action('wp_ajax_nopriv_get_filter_data', $this->atr_queries_ajax, 'get_filter_data');
 
-        //registrar hook para ajax en el llamado a la pagina del checkout
-        $this->charger->add_action('wp_ajax_load_checkout_content', $this->atr_ajax_woocommerce, 'load_checkout_content');
-        $this->charger->add_action('wp_ajax_nopriv_load_checkout_content', $this->atr_ajax_woocommerce, 'load_checkout_content');
+        //registrar hook para manejo de funciones de woocommerce
+        $this->charger->add_action('wp_ajax_add_product_shoping_cart', $this->atr_ajax_woocommerce, 'add_product_shoping_cart_ajax');
+        $this->charger->add_action('wp_ajax_nopriv_add_product_shoping_cart', $this->atr_ajax_woocommerce, 'add_product_shoping_cart_ajax');
     }
 
     public function get_theme_name()
