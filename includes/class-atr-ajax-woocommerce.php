@@ -17,4 +17,20 @@ class ATR_AjaxWoocommerce
         $WC_Cart->add_to_cart($product_id, $quantity);
         wp_send_json($quantity);
     }
+
+    /**
+     * Función para agregar un producto al carrito (hook para administrar peticiones AJAX)
+     */
+    function remove_product_from_cart()
+    {
+        if (isset($_POST['cart_item_key'])) {
+            $requested_cart_item_key = sanitize_text_field($_POST['cart_item_key']); // Renombramos la variable
+
+            foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+                if ($cart_item['product_id'] == $requested_cart_item_key) {
+                    WC()->cart->remove_cart_item($cart_item_key);
+                }
+            }
+        }
+    }
 }

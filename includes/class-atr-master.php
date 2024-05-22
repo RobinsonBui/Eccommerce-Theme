@@ -117,6 +117,9 @@ class ATR_Master
         //registrar hook para manejo de funciones de woocommerce
         $this->charger->add_action('wp_ajax_add_product_shoping_cart', $this->atr_ajax_woocommerce, 'add_product_shoping_cart_ajax');
         $this->charger->add_action('wp_ajax_nopriv_add_product_shoping_cart', $this->atr_ajax_woocommerce, 'add_product_shoping_cart_ajax');
+
+        $this->charger->add_action('wp_ajax_remove_product_from_cart', $this->atr_ajax_woocommerce, 'remove_product_from_cart');
+        $this->charger->add_action('wp_ajax_nopriv_remove_product_from_cart', $this->atr_ajax_woocommerce, 'remove_product_from_cart');
     }
 
     public function get_theme_name()

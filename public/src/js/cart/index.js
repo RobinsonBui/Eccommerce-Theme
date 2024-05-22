@@ -1,1 +1,2 @@
-import './add-cart'
+import './add-cart';
+import './shoping-cart'

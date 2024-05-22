@@ -16,18 +16,18 @@
                 while ($query->have_posts()) {
                     $query->the_post();
             ?>
-                    <article class="the-blog__article">
-                        <a href="<?php the_permalink(); ?>">
-                            <figure class="the-blog__figure">
-                                <?php the_post_thumbnail(); ?>
-                            </figure>
-                        </a>
-                        <a href="<?php the_permalink(); ?>">
-                            <h5 class="the-blog__h3"><?php the_title(); ?></h5>
-                        </a>
-                        <div class="the-blog__excerpt"><?php the_excerpt(); ?></div>
-                        <a class="the-blog__a" href="<?php the_permalink(); ?>">leer más</a>
-                    </article>
+            <article class="the-blog__article">
+                <a href="<?php the_permalink(); ?>">
+                    <figure class="the-blog__figure">
+                        <?php the_post_thumbnail(); ?>
+                    </figure>
+                </a>
+                <a href="<?php the_permalink(); ?>">
+                    <h5 class="the-blog__h3"><?php the_title(); ?></h5>
+                </a>
+                <div class="the-blog__excerpt"><?php the_excerpt(); ?></div>
+                <a class="the-blog__a" href="<?php the_permalink(); ?>">leer más</a>
+            </article>
             <?php
                 }
                 if ($query->found_posts > 9) {
